@@ -1,7 +1,7 @@
 body {
 	margin: 0px;
 	padding: 0px;
-	color: #000000;
+    color: #555555;
 	background-color: #ffffff;
     
     font-size: 14px;
@@ -15,20 +15,62 @@ div.main {
 
 header {
     display: block;
-    height: 136px;
 }
 
-header .logo, header .search, header .phone, header .cart {
-    display: inline-block;
+header .logo, header .search, header .contact, header .cart {
     width: 300px;
     height: 136px;
-    float: left;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
 }
 header .logo a {
     display: block;
     width: 300px;
     height: 136px;
     background: url('/img/ganteli-logo.jpg') no-repeat center;
+}
+
+header .search input[type=search] {
+    width: 50%;
+    height: 30px;
+    border: none;
+    box-sizing: border-box;
+    background: #ffffff;
+    padding: 5px;
+    border: 1px solid #e4e4e4;
+    border-radius: 3px 0px 0px 3px;
+    box-shadow: 1px 2px 2px 0 #e7e7e7 inset;
+}
+header .search input[type=submit] {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 0px 3px 3px 0px;
+    background: url('/img/search.png');
+}
+
+header .contact .phone {
+    font-size: 20px;
+    color: #008fc3;
+}
+
+header .cart a {
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+    padding: 10px 0px 10px 75px;
+    background: url('/img/cart.png') no-repeat left;
+    text-decoration: none;
+    line-height: 20px;
+}
+header .cart a .cart_summary {
+    font-size: 16px;
+    color: #008fc3;
+}
+header .cart a .cart_total {
+    color: #555555;
 }
 
 nav {
@@ -42,8 +84,8 @@ nav ul {
     padding: 0px;
 }
 nav ul li {
-    display: inline-block;
-    float: left;
+    display: table-cell;
+    vertical-align: middle;
     width: 238px;
     margin: 0px;
     padding: 12px 0px;
@@ -78,14 +120,13 @@ aside {
     display: block;
     width: 250px;
     float: left;
-    border: 1px solid #EEEEEE;
     margin-bottom: 20px;
+    border: 1px solid #EEEEEE;
 }
 aside div.header {
     background: #F5F4F4;
 }
 aside div.header div.title {
-    color: #555555;
     font-size: 16px;
     padding: 13px 0px 12px 50px;  
     background: url('/img/menu.png') no-repeat 20px 13px;
@@ -115,35 +156,36 @@ aside a:hover {
 
 article {
     display: block;
-    margin-left: 270px;
+    margin-left: 300px;
     margin-bottom: 20px;
 }
 
+
+div.footer {
+    background: #EAEAEA;
+    clear: both;  
+}
 footer {
     display: block;
-    height: 100px;
-    background: #EAEAEA;
-    clear: both;
+    width: 1200px;
+    margin: auto;
 }
 footer .copyright, footer .address, footer .contact {
-    display: inline-block;
-    height: 55px;
-    padding-top: 45px;
-    float: left;
+    height: 100px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
 }
 footer .copyright {
-    width: 300px;
-    text-align: center;
+    width: 250px;
 }
 footer .address {
-    width: 600px;
-    text-align: center;
+    width: 650px;
 }
 footer .contact {
     width: 300px;
-    padding-top: 20px;
-    text-align: center;
 }
 footer .contact .phone{
-    font-size: 18px;
+    font-size: 20px;
+    color: #008fc3;
 }

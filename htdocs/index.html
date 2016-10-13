@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <title>Гантели и штанги</title>
         <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/rouble/stylesheet.css" />
         <script src="/js/jquery.min.js"></script>
 
         <link rel="stylesheet" href="/css/jquery.bxslider.css" />
@@ -21,13 +22,25 @@
                     <a href="/"></a>
                 </div>
                 <div class="search">
-                    Поиск
+                    <form method="get" action="/search">
+						<input type="search" name="query" placeholder="Поиск" />
+						<input type="submit" value="" />
+					</form>
                 </div>
-                <div class="phone">
-                    Телефон
+                <div class="contact">
+                    <span class="phone">+7 (495) 796-32-34<br/>
+                    +7 (925) 777-65-84</span><br/>
+                    info@ganteli-shtangi.ru
                 </div>
                 <div class="cart">
-                    Корзина
+                    <a href="/cart/">
+                        <div class="cart_summary">
+                            Корзина (0)
+                        </div>
+                        <div class="cart_total">
+                            на сумму 0 <span class="rouble">Р</span>
+                        </div>
+                    </a>
                 </div>
             </header>
             
@@ -53,12 +66,12 @@
             
             <div class="teaser">
                 <ul class="bxslider">
-                    <li><a href="/"><img src="/upload/slide/1.jpg" /></a></li>
-                    <li><a href="/"><img src="/upload/slide/2.jpg" /></a></li>
-                    <li><a href="/"><img src="/upload/slide/3.jpg" /></a></li>
-                    <li><a href="/"><img src="/upload/slide/4.jpg" /></a></li>
-                    <li><a href="/"><img src="/upload/slide/5.jpg" /></a></li>
-                    <li><a href="/"><img src="/upload/slide/6.jpg" /></a></li>
+                    <li><a href="/"><img src="/upload/teaser/1.jpg" /></a></li>
+                    <li><a href="/"><img src="/upload/teaser/2.jpg" /></a></li>
+                    <li><a href="/"><img src="/upload/teaser/3.jpg" /></a></li>
+                    <li><a href="/"><img src="/upload/teaser/4.jpg" /></a></li>
+                    <li><a href="/"><img src="/upload/teaser/5.jpg" /></a></li>
+                    <li><a href="/"><img src="/upload/teaser/6.jpg" /></a></li>
                 </ul>
             </div>
             
@@ -111,7 +124,8 @@
             <article>
                 Контент
             </article>
-            
+        </div>
+        <div class="footer">
             <footer>
                 <div class="copyright">
                     Copyright © 2016
@@ -120,11 +134,11 @@
                     119049, г. Москва, 1-й Добрынинский переулок, д.19, строение 6, ООО "Фортиус групп"<br/>
                 </div>
                 <div class="contact">
-                    <span class="phone">+7(495)796-32-34<br/>
-                    +7(925)777-65-84</span><br/>
+                    <span class="phone">+7 (495) 796-32-34<br/>
+                    +7 (925) 777-65-84</span><br/>
                     info@ganteli-shtangi.ru
                 </div>
             </footer>
-        </div>
+         </div>
     </body>
 </html>
