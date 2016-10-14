@@ -4,16 +4,12 @@
         <meta charset="UTF-8" />
         <title>Гантели и штанги</title>
         <link rel="stylesheet" href="/css/index.css" />
-        <link rel="stylesheet" href="/css/rouble/stylesheet.css" />
-        <script src="/js/jquery.min.js"></script>
-
         <link rel="stylesheet" href="/css/jquery.bxslider.css" />
+        <link rel="stylesheet" href="/css/rouble/stylesheet.css" />
+        
+        <script src="/js/jquery.min.js"></script>
         <script src="/js/jquery.bxslider.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                $('.bxslider').bxSlider().startAuto();
-            });
-        </script>
+        <script src="/js/interface.js"></script>
     </head>
     <body>
         <div class="main">
@@ -122,7 +118,387 @@
             </aside>
             
             <article>
-                Контент
+                <div class="product_list">
+                    <h1>
+                        Скидки <a href="/product/marker/discount">Все cкидки</a>
+                    </h1>
+                    <div class="product_item">
+                        <div class="image">
+                            <a href="/">
+                                <div class="marker leader">
+                                    <span>Хит!</span>
+                                </div>
+                                <img src="/upload/product/example.jpg" />
+                            </a>
+                        </div>
+                        <div class="title">
+                            <a href="/">Эллиптический тренажер Fitnex (Steel Flex) E55SG E55SG E55SG</a>
+                        </div>
+                        <div class="price">
+                            <span class="price-new">45 990 <span class="rouble">Р</span></span>
+							<span class="price-old">60 990 <span class="rouble">Р</span></span>
+                        </div>
+                        <div class="vote">
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star"></div>
+                            <div class="count">10</div>
+                        </div>
+                        <div class="cart">
+                            <input type="button" value="В корзину" />
+                        </div>
+                        <div class="state available">
+                            В наличии
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <div class="image">
+                            <a href="/">
+                                <div class="marker novelty">
+                                    <span>New!</span>
+                                </div>
+                                <img src="/upload/product/example.jpg" />
+                            </a>
+                        </div>
+                        <div class="title">
+                            <a href="/">Эллиптический тренажер Fitnex (Steel Flex) E55SG</a>
+                        </div>
+                        <div class="price">
+							<span class="price">135 000 <span class="rouble">Р</span></span>
+                        </div>
+                        <div class="vote">
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star"></div>
+                            <div class="count">7</div>
+                        </div>
+                        <div class="cart">
+                            <input type="button" value="В корзину" />
+                        </div>
+                        <div class="state available">
+                            В наличии
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <div class="image">
+                            <a href="/">
+                                <div class="marker discount">
+                                    <span>Скидка!</span>
+                                </div>
+                                <img src="/upload/product/example.jpg" />
+                            </a>
+                        </div>
+                        <div class="title">
+                            <a href="/">Эллиптический тренажер Fitnex</a>
+                        </div>
+                        <div class="price">
+							<span class="price">135 000 <span class="rouble">Р</span></span>
+                        </div>
+                        <div class="vote">
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star"></div>
+                            <div class="count">3</div>
+                        </div>
+                        <div class="cart">
+                            <input type="button" value="В корзину" />
+                        </div>
+                        <div class="state available">
+                            В наличии
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <div class="image">
+                            <a href="/">
+                                <img src="/upload/product/example.jpg" />
+                            </a>
+                        </div>
+                        <div class="title">
+                            <a href="/">Эллиптический тренажер</a>
+                        </div>
+                        <div class="price">
+							<span class="price">135 000 <span class="rouble">Р</span></span>
+                        </div>
+                        <div class="vote">
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                        </div>
+                        <div class="cart">
+                            <input type="button" value="В корзину" />
+                        </div>
+                        <div class="state not-available">
+                            Под заказ
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product_list">
+                    <h1>
+                        Лидеры продаж <a href="/product/marker/discount">Все лидеры продаж</a>
+                    </h1>
+                    <div class="product_item">
+                        <div class="image">
+                            <a href="/">
+                                <div class="marker leader">
+                                    <span>Хит!</span>
+                                </div>
+                                <img src="/upload/product/example.jpg" />
+                            </a>
+                        </div>
+                        <div class="title">
+                            <a href="/">Эллиптический тренажер Fitnex (Steel Flex) E55SG E55SG E55SG</a>
+                        </div>
+                        <div class="price">
+                            <span class="price-new">45 990 <span class="rouble">Р</span></span>
+							<span class="price-old">60 990 <span class="rouble">Р</span></span>
+                        </div>
+                        <div class="vote">
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star"></div>
+                            <div class="count">10</div>
+                        </div>
+                        <div class="cart">
+                            <input type="button" value="В корзину" />
+                        </div>
+                        <div class="state available">
+                            В наличии
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <div class="image">
+                            <a href="/">
+                                <div class="marker novelty">
+                                    <span>New!</span>
+                                </div>
+                                <img src="/upload/product/example.jpg" />
+                            </a>
+                        </div>
+                        <div class="title">
+                            <a href="/">Эллиптический тренажер Fitnex (Steel Flex) E55SG</a>
+                        </div>
+                        <div class="price">
+							<span class="price">135 000 <span class="rouble">Р</span></span>
+                        </div>
+                        <div class="vote">
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star"></div>
+                            <div class="count">7</div>
+                        </div>
+                        <div class="cart">
+                            <input type="button" value="В корзину" />
+                        </div>
+                        <div class="state available">
+                            В наличии
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <div class="image">
+                            <a href="/">
+                                <div class="marker discount">
+                                    <span>Скидка!</span>
+                                </div>
+                                <img src="/upload/product/example.jpg" />
+                            </a>
+                        </div>
+                        <div class="title">
+                            <a href="/">Эллиптический тренажер Fitnex</a>
+                        </div>
+                        <div class="price">
+							<span class="price">135 000 <span class="rouble">Р</span></span>
+                        </div>
+                        <div class="vote">
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star"></div>
+                            <div class="count">3</div>
+                        </div>
+                        <div class="cart">
+                            <input type="button" value="В корзину" />
+                        </div>
+                        <div class="state available">
+                            В наличии
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <div class="image">
+                            <a href="/">
+                                <img src="/upload/product/example.jpg" />
+                            </a>
+                        </div>
+                        <div class="title">
+                            <a href="/">Эллиптический тренажер</a>
+                        </div>
+                        <div class="price">
+							<span class="price">135 000 <span class="rouble">Р</span></span>
+                        </div>
+                        <div class="vote">
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                        </div>
+                        <div class="cart">
+                            <input type="button" value="В корзину" />
+                        </div>
+                        <div class="state not-available">
+                            Под заказ
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product_list">
+                    <h1>
+                        Новинки <a href="/product/marker/discount">Все новинки</a>
+                    </h1>
+                    <div class="product_item">
+                        <div class="image">
+                            <a href="/">
+                                <div class="marker leader">
+                                    <span>Хит!</span>
+                                </div>
+                                <img src="/upload/product/example.jpg" />
+                            </a>
+                        </div>
+                        <div class="title">
+                            <a href="/">Эллиптический тренажер Fitnex (Steel Flex) E55SG E55SG E55SG</a>
+                        </div>
+                        <div class="price">
+                            <span class="price-new">45 990 <span class="rouble">Р</span></span>
+							<span class="price-old">60 990 <span class="rouble">Р</span></span>
+                        </div>
+                        <div class="vote">
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star"></div>
+                            <div class="count">10</div>
+                        </div>
+                        <div class="cart">
+                            <input type="button" value="В корзину" />
+                        </div>
+                        <div class="state available">
+                            В наличии
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <div class="image">
+                            <a href="/">
+                                <div class="marker novelty">
+                                    <span>New!</span>
+                                </div>
+                                <img src="/upload/product/example.jpg" />
+                            </a>
+                        </div>
+                        <div class="title">
+                            <a href="/">Эллиптический тренажер Fitnex (Steel Flex) E55SG</a>
+                        </div>
+                        <div class="price">
+							<span class="price">135 000 <span class="rouble">Р</span></span>
+                        </div>
+                        <div class="vote">
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star"></div>
+                            <div class="count">7</div>
+                        </div>
+                        <div class="cart">
+                            <input type="button" value="В корзину" />
+                        </div>
+                        <div class="state available">
+                            В наличии
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <div class="image">
+                            <a href="/">
+                                <div class="marker discount">
+                                    <span>Скидка!</span>
+                                </div>
+                                <img src="/upload/product/example.jpg" />
+                            </a>
+                        </div>
+                        <div class="title">
+                            <a href="/">Эллиптический тренажер Fitnex</a>
+                        </div>
+                        <div class="price">
+							<span class="price">135 000 <span class="rouble">Р</span></span>
+                        </div>
+                        <div class="vote">
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star active"></div>
+                            <div class="star"></div>
+                            <div class="count">3</div>
+                        </div>
+                        <div class="cart">
+                            <input type="button" value="В корзину" />
+                        </div>
+                        <div class="state available">
+                            В наличии
+                        </div>
+                    </div>
+                    <div class="product_item">
+                        <div class="image">
+                            <a href="/">
+                                <img src="/upload/product/example.jpg" />
+                            </a>
+                        </div>
+                        <div class="title">
+                            <a href="/">Эллиптический тренажер</a>
+                        </div>
+                        <div class="price">
+							<span class="price">135 000 <span class="rouble">Р</span></span>
+                        </div>
+                        <div class="vote">
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                        </div>
+                        <div class="cart">
+                            <input type="button" value="В корзину" />
+                        </div>
+                        <div class="state not-available">
+                            Под заказ
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text">
+                    <h1>О магазине</h1>
+                    <p>Объемные строительные системы, имеющие надземную и (или) подземную части, включающие в себя помещения, сети инженерно-технического обеспечения и системы инженерно-технического обеспечения и предназначенные.</p>
+                    <ul>
+                        <li>Транспортное (дороги, линейные объекты, мосты, тоннели).</li>
+                        <li>Гражданское (жилые дома, общественные здания).</li>
+                        <li>Военное (объекты военного назначения).</li>
+                        <li>Гидротехническое (плотины, дамбы, каналы, берегоукрепительные сооружения и устройства).</li>
+                        <li>Гидромелиоративное (системы орошения, осушения).</li>
+                    </ul>
+                    <p>Сооружения — объемные, плоскостные или линейные строительные системы, имеющие наземную, надземную и (или) подземную части, состоящие из несущих, а в отдельных случаях и ограждающих строительных конструкций и предназначенные для выполнения производственных процессов различного вида, хранения продукции.</p>
+                </div>
             </article>
         </div>
         <div class="footer">
@@ -139,6 +515,7 @@
                     info@ganteli-shtangi.ru
                 </div>
             </footer>
-         </div>
+        </div>
+        <a id="up-arrow" href=""></a>
     </body>
 </html>
