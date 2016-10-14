@@ -55,6 +55,14 @@ header .contact .phone {
     font-size: 20px;
     color: #008fc3;
 }
+header .contact .callback {
+    color: #008fc3;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+header .contact .callback:hover {
+    text-decoration: underline;
+}
 
 header .cart a {
     display: inline-block;
@@ -140,12 +148,12 @@ aside ul {
 }
 aside ul.lvl1 li {
     margin: 0px;
-    padding: 13px 0px 13px 20px;
+    padding: 13px 20px 13px 20px;
     list-style: none;
 }
 aside ul.lvl1 li ul.lvl2 li {
     margin: 0px;
-    padding: 13px 0px 0px 20px;
+    padding: 13px 20px 0px 20px;
     list-style: none;
 }
 aside a {
@@ -201,17 +209,18 @@ footer .contact .phone{
     width: 36px;
     height: 36px;
     z-index: 100;
+    opacity: 0;
     background: url('/img/up-arrow.png');
-    transition: opacity 0.15s ease-out;
+    transition: opacity 0.2s ease-out, visibility 1s ease-out;
 }
 
 #up-arrow.show {
+    opacity: 0.3;
     visibility: visible;
-    opacity: 0.5;
 }
 
 #up-arrow.show:hover {
-    opacity: 1;
+    opacity: 0.5;
 }
 
 div.product_list {
@@ -228,8 +237,8 @@ div.product_list h1 a {
     float: right;
     color: #008fc3;
     font-weight: normal;
-    text-transform: none;
     text-decoration: none;
+    text-transform: uppercase;
 }
 div.product_list h1 a:hover {
     text-decoration: underline;

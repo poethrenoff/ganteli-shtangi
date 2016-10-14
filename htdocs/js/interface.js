@@ -1,5 +1,12 @@
 $(document).ready(function(){
     $('.bxslider').bxSlider().startAuto();
+
+    $('#up-arrow').on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, 600);
+    });   
 });
 
 // SCROLL TO TOP
@@ -12,11 +19,4 @@ $(document).on('scroll', function() {
     } else {
         $('#up-arrow').removeClass('show');
     }
-});
-
-$('#up-arrow').on('click', function(e) {
-    e.preventDefault();
-    $('html, body').animate({
-        scrollTop: 0
-    }, 600);
 });
