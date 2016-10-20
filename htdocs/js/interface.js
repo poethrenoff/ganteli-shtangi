@@ -1,6 +1,4 @@
 $(document).ready(function(){
-    $('.bxslider').bxSlider().startAuto();
-
     $('#up-arrow').on('click', function(e) {
         e.preventDefault();
         $('html, body').animate({
