@@ -3,34 +3,58 @@ body {
     padding: 0px;
     color: #555555;
     background-color: #ffffff;
-
+    
     font-size: 14px;
     font-family: Helvetica, Arial, sans-serif;
+}
+h1, h2, h3 {
+    color: #333333;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0px 0px 15px 0px;
+}
+h1 {
+    font-size: 16px;
+}
+h2 {
+    font-size: 15px;
+}
+h3 {
+    font-size: 14px;
+}
+a {
+    color: #008fc3;
 }
 
 div.main {
     width: 1200px;
-    margin: auto;   
+    margin: auto;
 }
 
 header {
     display: block;
 }
 
-header .logo, header .search, header .contact, header .cart {
-    width: 300px;
+header .logo, header .search, header .contact, header .info {
     height: 136px;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
 }
+
+header .logo {
+	width: 250px;
+}
 header .logo a {
-    display: block;
-    width: 300px;
+    display: inline-block;
+    width: 200px;
     height: 136px;
-    background: url('/img/ganteli-logo.jpg') no-repeat center;
+    background: url('/img/logo.png') no-repeat center;
 }
 
+header .search {
+	width: 300px;
+}
 header .search input[type=search] {
     width: 50%;
     height: 30px;
@@ -51,12 +75,14 @@ header .search input[type=submit] {
     background: url('/img/search.png');
 }
 
+header .contact {
+	width: 350px;
+}
 header .contact .phone {
     font-size: 20px;
     color: #008fc3;
 }
 header .contact .callback {
-    color: #008fc3;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -64,7 +90,20 @@ header .contact .callback:hover {
     text-decoration: underline;
 }
 
-header .cart a {
+header .info {
+	width: 300px;
+	text-align: right;
+}
+header .info a.subscribe {
+    display: block;
+	margin-bottom: 20px;
+	text-align: center;
+    text-decoration: none;
+}
+header .info a.subscribe:hover {
+    text-decoration: underline;
+}
+header .info a.cart {
     display: inline-block;
     width: 150px;
     text-align: left;
@@ -73,58 +112,48 @@ header .cart a {
     text-decoration: none;
     line-height: 20px;
 }
-header .cart a .cart_summary {
+header .info a.cart .cart_summary {
     font-size: 16px;
-    color: #008fc3;
 }
-header .cart a .cart_summary:hover {
+header .info a.cart .cart_summary:hover {
     text-decoration: underline;
 }
-header .cart a .cart_total {
+header .info a.cart .cart_total {
     color: #555555;
 }
 
 nav {
     display: block;
-    height: 40px;
     overflow: hidden;
 }
-nav ul {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-}
-nav ul li {
+nav a {
     display: table-cell;
+    text-align: center;
     vertical-align: middle;
     width: 238px;
     margin: 0px;
     padding: 12px 0px;
-    text-align: center;
     background: #5B5B5B;
-    cursor: pointer;
     border-right: 1px solid rgba(0, 0, 0, 0.12);
     border-left: 1px solid rgba(255, 255, 255, 0.12);
+	color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
 }
-nav ul li:first-child {
+nav a:first-child {
     border-left: 1px solid #5B5B5B;
     border-radius: 3px 0px 0px 3px;
 }
-nav ul li:last-child {
+nav a:last-child {
     border-right: 1px solid #5B5B5B;
     border-radius: 0px 3px 3px 0px;
 }
-nav ul li.selected {
+nav a.selected {
     border-right: none;
     background: #494949;
 }
-nav ul li:hover {
+nav a:hover {
     background: #727272;
-}
-nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
 }
 
 aside {
@@ -132,37 +161,22 @@ aside {
     width: 250px;
     float: left;
     margin-bottom: 20px;
-    border: 1px solid #EEEEEE;
-}
-aside div.header {
-    background: #F5F4F4;
-}
-aside div.header div.title {
-    font-size: 16px;
-    padding: 13px 0px 12px 50px;  
-    background: url('/img/menu.png') no-repeat 20px 13px;
-}
-aside ul {
-    margin: 0px;
-    padding: 0px;
-}
-aside ul.lvl1 li {
-    margin: 0px;
-    padding: 13px 20px 13px 20px;
-    list-style: none;
-}
-aside ul.lvl1 li ul.lvl2 li {
-    margin: 0px;
-    padding: 13px 20px 0px 20px;
-    list-style: none;
 }
 aside a {
-    color: #555555;
+	display: block;
+	color: #ffffff;
     text-decoration: none;
 }
+aside a.lvl1 {
+    padding: 12px 20px;
+	background: #494949;
+}
+aside a.lvl2 {
+    padding: 5px 20px 5px 40px;
+	background: #5B5B5B;
+}
 aside a:hover {
-    color: #008fc3;
-    text-decoration: underline;
+    background: #727272;
 }
 
 article {
@@ -172,13 +186,11 @@ article {
     float: none;
 }
 
-div.footer {
-    background: #EAEAEA;
-}
 footer {
     display: block;
     width: 1200px;
     margin: auto;
+	background-color: #EAEAEA;
 }
 footer .copyright, footer .address, footer .contact {
     height: 100px;
@@ -226,19 +238,11 @@ footer .contact .phone{
 div.product_list {
     margin-bottom: 40px;
 }
-div.product_list h1 {
-    color: #333333;
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin: 0px 0px 20px 0px;
-}
 div.product_list h1 a {
     float: right;
-    color: #008fc3;
+	font-size: 14px;
     font-weight: normal;
-    text-decoration: none;
-    text-transform: uppercase;
+	text-decoration: none;
 }
 div.product_list h1 a:hover {
     text-decoration: underline;
@@ -267,6 +271,9 @@ div.product_item div.image {
     height: 170px;
     text-align: center;
     margin-bottom: 20px;
+}
+div.product_item div.image a {
+	text-decoration: none;
 }
 div.product_item div.image img {
     max-width: 170px;
@@ -383,18 +390,3 @@ div.product_item div.state.not-available {
     color: #cc0000;
 }
 
-div.text h1, h2, h3 {
-    color: #333333;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin: 0px 0px 10px 0px;
-}
-div.text h1 {
-    font-size: 16px;
-}
-div.text h2 {
-    font-size: 15px;
-}
-div.text h3 {
-    font-size: 14px;
-}

@@ -6,7 +6,12 @@
         <link rel="stylesheet" href="/css/index.css" />
         <link rel="stylesheet" href="/css/jquery.bxslider.css" />
         <link rel="stylesheet" href="/css/rouble/stylesheet.css" />
-        
+<!--
+		<link rel="icon" href="/img/logo-32x32.png" sizes="32x32" />
+		<link rel="icon" href="/img/logo-192x192.png" sizes="192x192" />
+		<link rel="apple-touch-icon-precomposed" href="/img/logo-180x180.png" />
+		<meta name="msapplication-TileImage" content="/img/logo-270x270.png" />
+-->
         <script src="/js/jquery.min.js"></script>
         <script src="/js/jquery.bxslider.min.js"></script>
         <script src="/js/interface.js"></script>
@@ -31,8 +36,11 @@
 						Заказать обратный звонок
                     </a>
                 </div>
-                <div class="cart">
-                    <a href="/cart/">
+                <div class="info">
+					<a class="subscribe" href="/subscribe">
+						Регистрация для оптовых покупателей
+					</a>
+                    <a class="cart" href="/cart/">
                         <div class="cart_summary">
                             Корзина (0)
                         </div>
@@ -44,28 +52,15 @@
             </header>
             
             <nav>
-                <ul>
-                    <li>
-                        <a href="/">О компании</a>
-                    </li>
-                    <li class="selected">
-                        <a href="/">Оплата и доставка</a>
-                    </li>
-                    <li>
-                        <a href="/">Гарантии и сервис</a>
-                    </li>
-                    <li>
-                        <a href="/">Оптовикам</a>
-                    </li>
-                    <li>
-                        <a href="/">Контакты</a>
-                    </li>
-                </ul>
+                <a href="/">О компании</a>
+				<a class="selected" href="/">Оплата и доставка</a>
+				<a href="/">Гарантии и сервис</a>
+				<a href="/">Оптовикам</a>
+				<a href="/">Контакты</a>
             </nav>
             
             <div class="teaser">
                 <ul class="bxslider">
-                    <li><a href="/"><img src="/upload/teaser/1.jpg" /></a></li>
                     <li><a href="/"><img src="/upload/teaser/2.jpg" /></a></li>
                     <li><a href="/"><img src="/upload/teaser/3.jpg" /></a></li>
                     <li><a href="/"><img src="/upload/teaser/4.jpg" /></a></li>
@@ -75,55 +70,33 @@
             </div>
             
             <aside>
-                <div class="header">
-                    <div class="title">
-                        Каталог
-                    </div>
-                </div>
-                <ul class="lvl1">
-                    <li>
-                        <a href="/product/kardiotrenazhery">Кардиотренажеры</a>
-                        <ul class="lvl2">
-                            <li><a href="/product/begovye_dorozhki">Беговые дорожки</a></li>
-                            <li><a href="/product/ellipticheskie_trenazhery">Эллиптические тренажеры</a></li>
-                            <li><a href="/product/velotrenazhery">Велотренажеры</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/product/silovye_trenazhery">Силовые тренажеры Alex, WNQ</a>
-                        <ul class="lvl2">
-                            <li><a href="/product/multistancii_wnq">Силовые мультистанции WNQ</a></li>
-                            <li><a href="/product/skami_i_stoyki">Скамьи и стойки</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/product/trenazhery_bodysolid">Тренажеры BodySolid</a>
-                        <ul class="lvl2">
-                            <li><a href="/product/multistancii_bodysolid">Мультистанции BodySolid</a></li>
-                            <li><a href="/product/blochnye_trenazhery_pro_club_line">Блочные PRO-CLUB LINE PRO-CLUB LINE</a></li>
-                            <li><a href="/product/svobodnye_vesa_pro_club_line">Св. веса PRO CLUB LINE</a></li>
-                            <li><a href="/product/blochnye_trenazhery_pro_dual_line_dva_v_odnom">PRO DUAL LINE</a></li>
-                            <li><a href="/product/trenazhery_bodysolid_s_nagruzkoy_na_svobodnyh_vesah">Свободные веса</a></li>
-                            <li><a href="/product/sportivnye_skami_i_stoyki_bodysolid">Скамьи и стойки</a></li>
-                            <li><a href="/product/trenazhery_bodysolid_serii_powerline">POWERLINE</a></li>
-                            <li><a href="/product/opcii_dlya_raboty_so_svobodnymi_vesami">Опции</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/product/silovye_trenazhery_steel_flex">Силовые тренажеры Steel Flex</a>
-                        <ul class="lvl2">
-                            <li><a href="/product/steel_flex_mega_power">STEEL FLEX Mega power</a></li>
-                            <li><a href="/product/steel_flex_neo">STEEL FLEX Neo</a></li>
-                            <li><a href="/product/svobodnye_vesa_steel_flex">STEEL FLEX Plate Loaded</a></li>
-                        </ul>
-                    </li>
-                </ul>
+				<h1>Каталог</h1>
+				<a class="lvl1" href="/product/kardiotrenazhery">Кардиотренажеры</a>
+					<a class="lvl2" class="lvl2" href="/product/begovye_dorozhki">Беговые дорожки</a>
+					<a class="lvl2" href="/product/ellipticheskie_trenazhery">Эллиптические тренажеры</a>
+					<a class="lvl2" href="/product/velotrenazhery">Велотренажеры</a>
+				<a class="lvl1" href="/product/silovye_trenazhery">Силовые тренажеры Alex, WNQ</a>
+					<a class="lvl2" href="/product/multistancii_wnq">Силовые мультистанции WNQ</a>
+					<a class="lvl2" href="/product/skami_i_stoyki">Скамьи и стойки</a>
+				<a class="lvl1" href="/product/silovye_trenazhery">Тренажеры BodySolid</a>
+					<a class="lvl2" href="/product/multistancii_bodysolid">Мультистанции BodySolid</a>
+					<a class="lvl2" href="/product/blochnye_trenazhery_pro_club_line">Блочные PRO-CLUB LINE PRO-CLUB LINE</a>
+					<a class="lvl2" href="/product/svobodnye_vesa_pro_club_line">Св. веса PRO CLUB LINE</a>
+					<a class="lvl2" href="/product/blochnye_trenazhery_pro_dual_line_dva_v_odnom">PRO DUAL LINE</a>
+					<a class="lvl2" href="/product/trenazhery_bodysolid_s_nagruzkoy_na_svobodnyh_vesah">Свободные веса</a>
+					<a class="lvl2" href="/product/sportivnye_skami_i_stoyki_bodysolid">Скамьи и стойки</a>
+					<a class="lvl2" href="/product/trenazhery_bodysolid_serii_powerline">POWERLINE</a>
+					<a class="lvl2" href="/product/opcii_dlya_raboty_so_svobodnymi_vesami">Опции</a>
+				<a class="lvl1" href="/product/silovye_trenazhery_steel_flex">Силовые тренажеры Steel Flex</a>
+					<a class="lvl2" href="/product/steel_flex_mega_power">STEEL FLEX Mega power</a>
+					<a class="lvl2" href="/product/steel_flex_neo">STEEL FLEX Neo</a>
+					<a class="lvl2" href="/product/svobodnye_vesa_steel_flex">STEEL FLEX Plate Loaded</a>
             </aside>
             
             <article>
                 <div class="product_list">
                     <h1>
-                        Скидки <a href="/product/marker/discount">Все cкидки</a>
+                        Акции <a href="/product/marker/discount">Все товары по акции</a>
                     </h1>
                     <div class="product_item">
                         <div class="image">
@@ -190,7 +163,7 @@
                         <div class="image">
                             <a href="/">
                                 <div class="marker discount">
-                                    <span>Скидка!</span>
+                                    <span>Акция!</span>
                                 </div>
                                 <img src="/upload/product/example.jpg" />
                             </a>
@@ -504,21 +477,18 @@
                 </div>
             </article>
         </div>
-        <div class="footer">
-            <footer>
-                <div class="copyright">
-                    Copyright © 2016
-                </div>
-                <div class="address">
-                    119049, г. Москва, 1-й Добрынинский переулок, д.19, строение 6, ООО "Фортиус групп"<br/>
-                </div>
-                <div class="contact">
-                    <span class="phone">+7 (495) 796-32-34<br/>
-                    +7 (925) 777-65-84</span><br/>
-                    info@ganteli-shtangi.ru
-                </div>
-            </footer>
-        </div>
-        <a id="up-arrow" href=""></a>
+		<footer>
+			<div class="copyright">
+				Copyright © 2016
+			</div>
+			<div class="address">
+				119049, г. Москва, 1-й Добрынинский переулок, д.19, строение 6, ООО "Фортиус групп"<br/>
+			</div>
+			<div class="contact">
+				<span class="phone">+7 (495) 796-32-34<br/>
+				+7 (925) 777-65-84</span><br/>
+				info@ganteli-shtangi.ru
+			</div>
+		</footer>
     </body>
 </html>
