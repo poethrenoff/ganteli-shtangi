@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Гантели и штанги</title>
+        <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/rouble/stylesheet.css" />
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/interface.js"></script>
+    </head>
+    <body>
+        <div class="main">
+            <header>
+                <div class="logo">
+                    <a href="/"></a>
+                </div>
+                <div class="search">
+                    <form method="get" action="/search">
+                        <input type="search" name="query" placeholder="Поиск" />
+                        <input type="submit" value="" />
+                    </form>
+                </div>
+                <div class="contact">
+                    <span class="phone">+7 (495) 796-32-34<br/>
+                        +7 (925) 777-65-84</span><br/>
+                    info@ganteli-shtangi.ru<br/><br/>
+                    <a href="/callback" class="callback">
+                        Заказать обратный звонок
+                    </a>
+                </div>
+                <div class="info">
+                    <a class="subscribe" href="/subscribe">
+                        Регистрация для оптовых покупателей
+                    </a>
+                    <a class="cart" href="/cart/">
+                        <div class="cart_summary">
+                            Корзина (0)
+                        </div>
+                        <div class="cart_total">
+                            на сумму 0 <span class="rouble">Р</span>
+                        </div>
+                    </a>
+                </div>
+            </header>
+
+            <nav>
+                <a href="/">О компании</a>
+                <a class="selected" href="/">Оплата и доставка</a>
+                <a href="/">Гарантии и сервис</a>
+                <a href="/">Оптовикам</a>
+                <a href="/">Контакты</a>
+            </nav>
+
+            <aside>
+                <h1>Каталог</h1>
+                <a class="lvl1" href="/product/kardiotrenazhery">Кардиотренажеры</a>
+                <a class="lvl2" href="/product/begovye_dorozhki">Беговые дорожки</a>
+                <a class="lvl2" href="/product/ellipticheskie_trenazhery">Эллиптические тренажеры</a>
+                <a class="lvl2" href="/product/velotrenazhery">Велотренажеры</a>
+                <a class="lvl1" href="">Диски</a>
+                <a class="lvl2" href="">Олимпийские</a>
+                <a class="lvl3" href="">Обрезиненные</a>
+                <a class="lvl3" href="">Полиуретановые</a>
+                <a class="lvl3" href="">Hammerton</a>
+                <a class="lvl3" href="">Резиновые</a>
+                <a class="lvl2" href="">Домашние (25 мм)</a>
+                <a class="lvl1" href="/product/silovye_trenazhery">Силовые тренажеры Alex, WNQ</a>
+                <a class="lvl2" href="/product/multistancii_wnq">Силовые мультистанции WNQ</a>
+                <a class="lvl2" href="/product/skami_i_stoyki">Скамьи и стойки</a>
+                <a class="lvl1" href="/product/silovye_trenazhery">Тренажеры BodySolid</a>
+                <a class="lvl2" href="/product/multistancii_bodysolid">Мультистанции BodySolid</a>
+                <a class="lvl2" href="/product/blochnye_trenazhery_pro_club_line">Блочные PRO-CLUB LINE PRO-CLUB LINE</a>
+                <a class="lvl2" href="/product/svobodnye_vesa_pro_club_line">Св. веса PRO CLUB LINE</a>
+                <a class="lvl2" href="/product/blochnye_trenazhery_pro_dual_line_dva_v_odnom">PRO DUAL LINE</a>
+                <a class="lvl2" href="/product/trenazhery_bodysolid_s_nagruzkoy_na_svobodnyh_vesah">Свободные веса</a>
+                <a class="lvl2" href="/product/sportivnye_skami_i_stoyki_bodysolid">Скамьи и стойки</a>
+                <a class="lvl2" href="/product/trenazhery_bodysolid_serii_powerline">POWERLINE</a>
+                <a class="lvl2" href="/product/opcii_dlya_raboty_so_svobodnymi_vesami">Опции</a>
+                <a class="lvl1" href="/product/silovye_trenazhery_steel_flex">Силовые тренажеры Steel Flex</a>
+                <a class="lvl2" href="/product/steel_flex_mega_power">STEEL FLEX Mega power</a>
+                <a class="lvl2" href="/product/steel_flex_neo">STEEL FLEX Neo</a>
+                <a class="lvl2" href="/product/svobodnye_vesa_steel_flex">STEEL FLEX Plate Loaded</a>
+            </aside>
+
+            <article>
+                <h1>Корзина</h1>
+                <form method="post" id="cart" action="/cart/save">
+                    <table class="cart">
+                        <tr>
+                            <td colspan="2">
+                                Ваш заказ
+                            </td>
+                            <td>
+                                Цена
+                            </td>
+                            <td>
+                                Кол-во
+                            </td>
+                            <td>
+                                Стоимость
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="image">
+                                <a href="/">
+                                    <img src="/upload/product/example.jpg" height="50" />
+                                </a>
+                            </td>
+                            <td class="product">
+                                <a href="">Беговая дорожка Fitnex (Steel Flex) T60HRC</a>
+                            </td>
+                            <td class="price">
+                                1 000 000 <span class="rouble">Р</span>
+                            </td>
+                            <td class="quantity">
+                                <input type="hidden" value="205000" name="price[1072]"/>
+                                <a href="" onclick="incItem($(this)); return false" class="plus"></a>
+                                <input type="text" value="1" name="quantity[1072]" readonly="readonly" class="quantity"/>
+                                <a href="" onclick="decItem($(this)); return false" class="minus"></a>
+                            </td>
+                            <td class="cost">
+                                 1 000 000 <span class="rouble">Р</span>
+                            </td>
+                            <td class="delete">
+                                <a class="delete" href="/cart/delete/1072" title="Удалить">
+                                    Удалить
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="image">
+                                <a href="/">
+                                    <img src="/upload/product/example.jpg" height="50" />
+                                </a>
+                            </td>
+                            <td class="product">
+                                <a href="">Беговая дорожка Fitnex (Steel Flex) T60HRC</a>
+                            </td>
+                            <td class="price">
+                                1 000 000 <span class="rouble">Р</span>
+                            </td>
+                            <td class="quantity">
+                                <input type="hidden" value="205000" name="price[1072]"/>
+                                <a href="" onclick="incItem($(this)); return false" class="plus"></a>
+                                <input type="text" value="2" name="quantity[1072]" readonly="readonly" class="quantity"/>
+                                <a href="" onclick="decItem($(this)); return false" class="minus"></a>
+                            </td>
+                            <td class="cost">
+                                 2 000 000 <span class="rouble">Р</span>
+                            </td>
+                            <td class="delete">
+                                <a class="delete" href="/cart/delete/1072" title="Удалить">
+                                    Удалить
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="image">
+                                <a href="/">
+                                    <img src="/upload/product/example.jpg" height="50" />
+                                </a>
+                            </td>
+                            <td class="product">
+                                <a href="/">Беговая дорожка Fitnex (Steel Flex) T60HRC</a>
+                            </td>
+                            <td class="price">
+                                1 000 000 <span class="rouble">Р</span>
+                            </td>
+                            <td class="quantity">
+                                <input type="hidden" value="205000" name="price[1072]"/>
+                                <a href="" onclick="incItem($(this)); return false" class="plus"></a>
+                                <input type="text" value="3" name="quantity[1072]" readonly="readonly" class="quantity"/>
+                                <a href="" onclick="decItem($(this)); return false" class="minus"></a>
+                            </td>
+                            <td class="cost">
+                                 3 000 000 <span class="rouble">Р</span>
+                            </td>
+                            <td class="delete">
+                                <a class="delete" href="/cart/delete/1072" title="Удалить">
+                                    Удалить
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                &nbsp;
+                            </td>
+                            <td class="total">
+                                Итого:
+                            </td>
+                            <td class="quantity">
+                                6
+                            </td>
+                            <td class="cost">
+                                6 000 000 <span class="rouble">Р</span>
+                            </td>
+                            <td class="delete">
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <br/>
+                <input type="button" value="Оформить заказ" onclick="window.location.href = '/order'; return false;" class="order"/>
+                &nbsp;&nbsp;&nbsp;
+                <input type="button" value="Очистить корзину" onclick="if ( confirm('Вы уверены, что хотите очистить корзину?') ) { window.location.href = '/cart/clear'; } return false;" class="clear" />
+            </article>
+        </div>
+        <footer>
+            <div class="copyright">
+                Copyright © 2016
+            </div>
+            <div class="address">
+                119049, г. Москва, 1-й Добрынинский переулок, д.19, строение 6, ООО "Фортиус групп"<br/>
+            </div>
+            <div class="contact">
+                <span class="phone">+7 (495) 796-32-34<br/>
+                    +7 (925) 777-65-84</span><br/>
+                info@ganteli-shtangi.ru
+            </div>
+        </footer>
+    </body>
+</html>

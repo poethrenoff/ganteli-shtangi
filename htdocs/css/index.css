@@ -3,7 +3,7 @@ body {
     padding: 0px;
     color: #555555;
     background-color: #ffffff;
-    
+
     font-size: 14px;
     font-family: Helvetica, Arial, sans-serif;
 }
@@ -43,7 +43,7 @@ header .logo, header .search, header .contact, header .info {
 }
 
 header .logo {
-	width: 250px;
+    width: 250px;
 }
 header .logo a {
     display: inline-block;
@@ -53,12 +53,11 @@ header .logo a {
 }
 
 header .search {
-	width: 300px;
+    width: 300px;
 }
 header .search input[type=search] {
     width: 50%;
     height: 30px;
-    border: none;
     box-sizing: border-box;
     background: #ffffff;
     padding: 5px;
@@ -76,7 +75,7 @@ header .search input[type=submit] {
 }
 
 header .contact {
-	width: 350px;
+    width: 350px;
 }
 header .contact .phone {
     font-size: 20px;
@@ -91,13 +90,13 @@ header .contact .callback:hover {
 }
 
 header .info {
-	width: 300px;
-	text-align: right;
+    width: 300px;
+    text-align: right;
 }
 header .info a.subscribe {
     display: block;
-	margin-bottom: 20px;
-	text-align: center;
+    margin-bottom: 20px;
+    text-align: center;
     text-decoration: none;
 }
 header .info a.subscribe:hover {
@@ -137,7 +136,7 @@ nav a {
     background: #5B5B5B;
     border-right: 1px solid rgba(0, 0, 0, 0.12);
     border-left: 1px solid rgba(255, 255, 255, 0.12);
-	color: #ffffff;
+    color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -164,28 +163,29 @@ aside {
     margin-bottom: 20px;
 }
 aside a {
-	display: block;
-	color: #ffffff;
+    display: block;
+    color: #ffffff;
     text-decoration: none;
 }
 aside a.lvl1 {
     padding: 12px 20px;
-	background: #494949;
+    background: #494949;
 }
 aside a.lvl2 {
     padding: 5px 20px 5px 40px;
-	background: #5B5B5B;
+    background: #5B5B5B;
 }
 aside a.lvl3 {
     font-size: 12px;
     padding: 5px 20px 5px 60px;
-	background: #5B5B5B;
+    background: #5B5B5B;
 }
 aside a:hover {
     background: #727272;
 }
 
 div.teaser {
+    height: 360px;
     margin-bottom: 20px;
 }
 
@@ -201,7 +201,7 @@ footer {
     width: 1200px;
     margin: auto;
     clear: both;
-	background-color: #EAEAEA;
+    background-color: #EAEAEA;
 }
 footer .copyright, footer .address, footer .contact {
     height: 100px;
@@ -255,9 +255,9 @@ div.product_list {
 }
 div.product_list h1 a {
     float: right;
-	font-size: 12px;
+    font-size: 12px;
     font-weight: normal;
-	text-decoration: none;
+    text-decoration: none;
 }
 div.product_list h1 a:hover {
     text-decoration: underline;
@@ -281,7 +281,7 @@ div.product_item div.image {
     margin-bottom: 20px;
 }
 div.product_item div.image a {
-	text-decoration: none;
+    text-decoration: none;
 }
 div.product_item div.image img {
     max-width: 170px;
@@ -422,7 +422,7 @@ div.catalogue_item div.image {
     margin-bottom: 20px;
 }
 div.catalogue_item div.image a {
-	text-decoration: none;
+    text-decoration: none;
 }
 div.catalogue_item div.image img {
     max-width: 170px;
@@ -525,4 +525,149 @@ div.product div.instruction {
 }
 div.product div.video {
     text-align: center;
+}
+
+
+form .field {
+    padding: 10px 0;
+}
+form .field input[type=text], form .field select, form .field textarea {
+    width: 300px;
+    height: 30px;
+    border: none;
+    box-sizing: border-box;
+    background: #ffffff;
+    padding: 5px;
+    border: 1px solid #e4e4e4;
+    border-radius: 3px 0px 0px 3px;
+}
+form .field textarea {
+    height: 90px;
+}
+form .field.captcha img {
+    float: left;
+    margin-right: 10px;
+}
+form .field.captcha input[type=text] {
+    width: 140px;
+}
+form .field input[type=submit] {
+    width: 150px;
+    height: 30px;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background: #008FC4;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+form .field .require {
+    color: #aa0000;
+}
+form .field .error {
+    padding-left: 10px;
+    color: #ee0000;
+}
+
+
+table.cart {
+    width: 100%;
+    border-collapse: collapse;
+}
+table.cart tr:first-child td {
+    border: none;
+    padding: 5px;
+    text-align: center;
+    font-weight: normal;
+}
+table.cart td {
+    padding: 15px;
+    vertical-align: middle;
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+}
+table.cart tr:last-child td {
+    border-bottom: none;
+}
+table.cart td.image {
+    width: 80px;
+    text-align: center;
+}
+table.cart td.image img {
+    min-width: 50px;
+    min-height: 50px;
+}
+table.cart td.product {
+    text-align: left;
+}
+table.cart td.product a {
+    color: #008fc3;
+    text-decoration: none;
+}
+table.cart td.product a:hover {
+    color: #555555;
+    text-decoration: underline;
+}
+table.cart td.price {
+    width: 90px;
+    font-size: 16px;
+    text-align: left;
+}
+table.cart td.quantity {
+    width: 80px;
+    font-size: 16px;
+    text-align: center;
+}
+table.cart td.quantity input.quantity {
+    width: 30px;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+table.cart td.quantity a.plus, table.cart td.quantity a.minus {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+}
+table.cart td.quantity a.plus {
+    background: url('/img/plus.png') no-repeat;
+}
+table.cart td.quantity a.minus {
+    background: url('/img/minus.png') no-repeat;
+}
+table.cart td.cost {
+    width: 90px;
+    font-size: 16px;
+    text-align: left;
+}
+table.cart td.delete {
+    width: 80px;
+    text-align: center;
+}
+table.cart td.delete a.delete {
+    display: inline-block;
+    padding-left: 20px;
+    color: #555555;
+    text-decoration: none;
+    background: url('/img/delete.png') no-repeat 0px 2px;
+}
+table.cart td.delete a.delete:hover {
+    text-decoration: underline;
+}
+table.cart td.total {
+    text-align: center;
+}
+input.order, input.clear {
+    width: 150px;
+    height: 30px;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background: #008FC4;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
 }
