@@ -1,0 +1,11 @@
+                    <a class="subscribe" href="/subscribe">
+                        Регистрация для оптовых покупателей
+                    </a>
+                    <a class="cart" href="/cart">
+                        <div class="cart_summary">
+                            Корзина (<?= $this->getQuantity() ?>)
+                        </div>
+                        <div class="cart_total">
+                            на сумму <?= number_format($this->getSum(), 0, '.', ' ') ?> <span class="rouble">Р</span>
+                        </div>
+                    </a>

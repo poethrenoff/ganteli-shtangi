@@ -1,35 +1,67 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
-	<head>
-		<title><?= $this->escape( $this -> meta_title ) ?></title>
-		<meta name="keywords" content="<?= $this->escape( $this -> meta_keywords ) ?>"/> 
-		<meta name="description" content="<?= $this->escape( $this -> meta_description ) ?>"/> 
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" type="text/css" href="/css/index.css"/>
-	</head>
-	<body>
-		<table class="main" border="1">
-			<tr>
-				<td class="header" colspan="3">
-<?= Adminko\View::block( 'block/header' ) ?> 
-				</td>
-			</tr>
-			<tr>
-				<td class="menu">
-<?= $this -> menu ?> 
-				</td>
-				<td class="content">
-<?= $this -> content ?> 
-				</td>
-				<td class="news">
-<?= $this -> news ?> 
-				</td>
-			</tr>
-			<tr>
-				<td class="footer" colspan="3">
-<?= Adminko\View::block( 'block/footer' ) ?> 
-				</td>
-			</tr>
-		</table>
-	</body>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title><?= $this->escape($this->meta_title) ?></title>
+        <meta name="keywords" content="<?= $this->escape($this->meta_keywords) ?>"/> 
+        <meta name="description" content="<?= $this->escape($this->meta_description) ?>"/>
+        <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/rouble/stylesheet.css" />
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/interface.js"></script>
+    </head>
+    <body>
+        <div class="main">
+            <header>
+                <div class="logo">
+                    <a href="/"></a>
+                </div>
+                <div class="search">
+<?= $this->search ?>
+                </div>
+                <div class="contact">
+<?= $this->header_contact ?>
+                </div>
+                <div class="info">
+<?= $this->cart ?>
+                </div>
+            </header>
+
+            <nav>
+<?= $this->menu ?>
+            </nav>
+
+<?php if ($this->teaser) { ?>
+            <div class="teaser">
+<?= $this->teaser ?>
+            </div>
+
+<?php } ?>
+            <aside>
+<?= $this->catalogue ?>
+            </aside>
+
+            <article>
+<?php if ($this->marker) { ?>
+            <div class="marker">
+<?= $this->marker ?>
+            </div>
+
+<?php } ?>
+<?= $this->content ?>
+            </article>
+        </div>
+        <footer>
+            <div class="copyright">
+<?= $this->copyright ?>
+            </div>
+            <div class="address">
+<?= $this->address ?>
+            </div>
+            <div class="contact">
+<?= $this->footer_contact ?>
+            </div>
+        </footer>
+        <a id="up-arrow" href=""></a>
+    </body>
 </html>

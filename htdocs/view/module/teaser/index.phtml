@@ -1,0 +1,14 @@
+                <div id="bx-slider">
+<?php foreach ($this->teaser_list as $teaser_item) { ?>
+                    <img src="<?= $teaser_item->getTeaserImage() ?>" />
+<?php } ?>
+                </div>
+
+                <link rel="stylesheet" href="/css/bxslider.css" />
+                <script src="/js/bxslider.min.js"></script>
+
+                <script>
+                    $(document).ready(function(){
+                        $('#bx-slider').bxSlider().startAuto();
+                    });
+                </script>

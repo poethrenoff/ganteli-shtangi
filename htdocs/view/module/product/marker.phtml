@@ -1,0 +1,53 @@
+<?php if ($this->product_list) { ?>
+                <div class="product_list">
+                    <h1>
+                        <?= $this->marker->getMarkerTitle() ?><? if (Adminko\System::action() == 'index') { ?> <a href="<?= Adminko\System::urlFor(array('controller' => 'product', 'action' => 'marker_list', 'marker' => $this->marker->getMarkerName())) ?>"><?= $this->marker->getMarkerLink() ?></a><? } ?>
+                    </h1>
+<?php   foreach ($this->product_list as $product_item) { ?>
+                    <div class="product_item">
+                        <div class="image" data-image-id="<?= $ui = uniqid(); ?>">
+                            <a href="<?= $product_item->getProductUrl() ?>">
+                                <div class="marker_list">
+<?php       foreach ($this->marker->getByProduct($product_item) as $marker_item) { ?>
+                                    <div class="marker <?= $marker_item->getMarkerName() ?>">
+                                        <span><?= $marker_item->getMarkerLegend() ?></span>
+                                    </div>
+<?php       } ?>
+                                </div>
+                                <img src="<?= $product_item->getProductImage() . '/r/170/170' ?>" />
+                            </a>
+                        </div>
+                        <div class="title">
+                            <a href="<?= $product_item->getProductUrl() ?>"><?= $product_item->getProductTitle() ?></a>
+                        </div>
+                        <div class="price">
+<?php           if ($product_item->getProductPriceOld()) { ?>
+                            <span class="price-new"><?= number_format($product_item->getProductPrice(), 0, 0, ' ') ?> <span class="rouble">Р</span></span>
+                            <span class="price-old"><?= number_format($product_item->getProductPriceOld(), 0, 0, ' ') ?> <span class="rouble">Р</span></span>
+<?php           } else { ?>
+                            <span class="price"><?= number_format($product_item->getProductPrice(), 0, 0, ' ') ?> <span class="rouble">Р</span></span>
+<?php           } ?>
+                        </div>
+<?php $rating = round($product_item->getProductRating()); ?>
+                        <div class="vote" rating="<?= $rating ?>" data-id="<?= $product_item->getId() ?>">
+<? for ($i = 1; $i <= 5; $i++) { ?>
+                            <div class="star<?php if ($rating >= $i) { ?> active<? } ?>" mark="<?= $i ?>"></div>
+<?php  } ?>
+                            <div class="count"><?= $product_item->getProductVoters() ?></div>
+                        </div>
+                        <div class="cart">
+                            <input type="button" value="В корзину" onclick="buyItem(<?= $product_item->getId() ?>, '<?= $ui ?>')" />
+                        </div>
+<?php           if ($product_item->getProductStock()) { ?>
+                        <div class="state available">
+                            В наличии
+                        </div>
+<?php           } else { ?>
+                        <div class="state not-available">
+                            Под заказ
+                        </div>
+<?php           } ?>
+                    </div>
+<?php       } ?>
+                </div>
+<?php   } ?>

@@ -264,7 +264,7 @@ div.product_list h1 a:hover {
 }
 
 div.product_item {
-    display: inline-table;
+    display: inline-block;
     width: 170px;
     height: 360px;
     padding: 15px;
@@ -287,14 +287,17 @@ div.product_item div.image img {
     max-width: 170px;
     max-height: 170px;
 }
-div.product_item div.image .marker {
+div.product_item div.image .marker_list {
     position: absolute;
     z-index: 100;
     width: 46px;
-    height: 46px;
     margin-left: 124px;
 }
-div.product_item div.image .marker span {
+div.product_item div.image .marker_list .marker {
+    height: 46px;
+    margin-bottom: 5px;
+}
+div.product_item div.image .marker_list .marker span {
     width: 46px;
     height: 46px;
     display: table-cell;
@@ -304,22 +307,22 @@ div.product_item div.image .marker span {
     color: #ffffff;
     font-weight: bold;
 }
-div.product_item div.image .marker.leader {
+div.product_item div.image .marker_list .marker.leader {
     background: url('/img/marker.png');
 }
-div.product_item div.image .marker.leader span {
+div.product_item div.image .marker_list .marker.leader span {
     font-size: 12px;
 }
-div.product_item div.image .marker.discount {
+div.product_item div.image .marker_list .marker.discount {
     background: url('/img/marker.png') 0 46px;
 }
-div.product_item div.image .marker.discount span {
+div.product_item div.image .marker_list .marker.discount span {
     font-size: 10px;
 }
-div.product_item div.image .marker.novelty {
+div.product_item div.image .marker_list .marker.novelty {
     background: url('/img/marker.png') 0 92px;
 }
-div.product_item div.image .marker.novelty span {
+div.product_item div.image .marker_list .marker.novelty span {
     font-size: 12px;
 }
 
@@ -355,6 +358,7 @@ div.product_item div.price span.price-old, div.product div.info div.price span.p
 }
 
 div.product_item div.vote, div.product div.info div.vote {
+    cursor: default;
     margin-bottom: 10px;
 }
 div.product_item div.vote div.star, div.product div.info div.vote div.star {
