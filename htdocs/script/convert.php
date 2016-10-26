@@ -49,7 +49,6 @@ foreach ($brand_list as $brand_item) {
     Db::insert('brand', array(
         'brand_id' => $brand_id,
         'brand_title' => $brand_item['name_ru-RU'],
-        'brand_name' => str_replace('-', '_', $brand_item['alias_ru-RU']),
     ));
     
     $brand_map[$brand_item['manufacturer_id']] = $brand_id++;
@@ -60,23 +59,15 @@ foreach ($brand_list as $brand_item) {
 $product_list = Db::selectAll('select * from kor9f_jshopping_products inner join kor9f_jshopping_products_to_categories using(product_id) order by category_id, product_ordering');
 
 $product_id = 1;
-$product_map = array(); $catalogue_product_map = array(); $product_picture_map = array();
-$product_image_url = 'http://ganteli-shtangi.ru/components/com_jshopping/files/img_products/';
-$product_image_path = '../upload/product/'; $product_image_alias = '/upload/product/';
+$product_map = array(); $catalogue_product_map = array();
 
 Db::delete('product');
-Db::delete('product_picture');
 
 foreach ($product_list as $product_item) {
     $product_catalogue = $catalogue_map[$product_item['category_id']];
     $product_brand = isset($brand_map[$product_item['product_manufacturer_id']]) ?
         $brand_map[$product_item['product_manufacturer_id']] : 0;
     @$catalogue_product_map[$product_catalogue]++;
-    
-    if (!file_exists($product_image_path . $product_item['image'])) {
-        $product_image_data = file_get_contents($product_image_url . 'full_' . $product_item['image']);
-        file_put_contents($product_image_path . $product_item['image'], $product_image_data);
-    }
     
     Db::insert('product', array(
         'product_id' => $product_id,
@@ -92,13 +83,7 @@ foreach ($product_list as $product_item) {
         'product_order' => $catalogue_product_map[$product_catalogue],
         'product_active' => $product_item['product_publish'],
     ));
-    Db::insert('product_picture', array(
-        'picture_product' => $product_id,
-        'picture_image' => $product_image_alias . $product_item['image'],
-        'picture_order' => 1
-    ));
     
-    @$product_picture_map[$product_id]++;
     $product_map[$product_item['product_id']] = $product_id++;
 }
 
@@ -109,6 +94,12 @@ $picture_list = Db::selectAll('select * from kor9f_jshopping_products_images
           image_name not like \'garantija_luchshej_tseny%\' and
           image_name not like \'uznajte_tsenu%\'
     order by product_id, ordering');
+
+$product_picture_map = array();
+$product_image_url = 'http://ganteli-shtangi.ru/components/com_jshopping/files/img_products/';
+$product_image_path = '../upload/product/'; $product_image_alias = '/upload/product/';
+
+Db::delete('product_picture');
 
 foreach ($picture_list as $picture_item) {
     $product_id = $product_map[$picture_item['product_id']];

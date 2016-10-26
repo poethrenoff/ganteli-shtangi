@@ -1,9 +1,8 @@
 <?php
 namespace Adminko\Model;
 
-use Adminko\System;
-use Adminko\Metadata;
 use Adminko\Db\Db;
+use Adminko\System;
 
 class ProductModel extends Model
 {
@@ -38,7 +37,7 @@ class ProductModel extends Model
     }
     
     // Возвращает список товаров по маркеру
-    public function getByMarker($marker, $limit = 4)
+    public function getByMarker($marker, $limit = null)
     {
         $records = db::selectAll('
             select product.* from product
@@ -46,7 +45,7 @@ class ProductModel extends Model
                 inner join product_marker using(product_id)
             where marker_id = :marker_id and
                 product_active = :product_active and catalogue_active = :catalogue_active
-            order by rand() limit ' . $limit,
+            order by rand()' . ( $limit ? ' limit ' . $limit : ''),
             array('marker_id' => $marker->getId(), 'product_active' => 1, 'catalogue_active' => 1));
         
         return $this->getBatch($records);

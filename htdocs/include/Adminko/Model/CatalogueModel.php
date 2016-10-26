@@ -6,6 +6,9 @@ use Adminko\Db\Db;
 
 class CatalogueModel extends HierarchyModel
 {
+    // Пункт меню выделен
+    protected $selected = false;
+    
     // Возвращает объект каталога по системному имени
     public function getByName($catalogue_name)
     {

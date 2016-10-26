@@ -104,7 +104,7 @@ header .info a.subscribe:hover {
 }
 header .info a.cart {
     display: inline-block;
-    width: 150px;
+    width: 160px;
     text-align: left;
     padding: 10px 0px 10px 75px;
     background: url('/img/cart.png') no-repeat left;
@@ -179,6 +179,9 @@ aside a.lvl3 {
     font-size: 12px;
     padding: 5px 20px 5px 60px;
     background: #5B5B5B;
+}
+aside a.selected {
+    font-weight: bold;
 }
 aside a:hover {
     background: #727272;
@@ -460,9 +463,6 @@ div.product div.image .gallery {
     text-align: center;
     vertical-align: middle;
 }
-div.product div.image .gallery a {
-    display: none;
-}
 div.product div.image .gallery img {
     max-width: 330px;
     max-height: 330px;
@@ -483,6 +483,7 @@ div.product div.image .thumbnail a {
     margin-bottom: 5px;
     border: 1px solid #e4e4e4;
 }
+div.product div.image .thumbnail a.selected,
 div.product div.image .thumbnail a:hover {
     border: 1px solid #008fc3;
 }
@@ -501,6 +502,9 @@ div.product div.info {
 
 div.product div.description {
     margin-top: 20px;
+}
+div.product div.info div.brand {
+    margin-bottom: 20px;
 }
 div.product div.info div.price {
     margin-bottom: 20px;
@@ -614,9 +618,9 @@ table.cart td.product a:hover {
     text-decoration: underline;
 }
 table.cart td.price {
-    width: 90px;
+    width: 100px;
     font-size: 16px;
-    text-align: left;
+    text-align: right;
 }
 table.cart td.quantity {
     width: 80px;
@@ -643,9 +647,9 @@ table.cart td.quantity a.minus {
     background: url('/img/minus.png') no-repeat;
 }
 table.cart td.cost {
-    width: 90px;
+    width: 100px;
     font-size: 16px;
-    text-align: left;
+    text-align: right;
 }
 table.cart td.delete {
     width: 80px;

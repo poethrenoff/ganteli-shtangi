@@ -12,27 +12,48 @@ class ProductModule extends Module
     {
         $catalogue_name = System::getParam('catalogue');
         $catalogue = $this->getCatalogue($catalogue_name);
-
-        $this->view->assign($catalogue);
-        $this->content = $this->view->fetch('module/product/list');
-    }
-    
-    // Лучшие товары
-    protected function actionBest()
-    {
-        $product_list = Model::factory('product')->getBestProductList();
         
-        $this->view->assign('product_list', $product_list);
-        $this->content = $this->view->fetch('module/product/best');
+        $catalogue_list = $catalogue->getCatalogueList();
+        $product_list = $catalogue->getProductList();
+        
+        if (count($catalogue_list)) {
+            $this->view->assign('catalogue', $catalogue);
+            $this->view->assign('catalogue_list', $catalogue_list);
+            $this->content = $this->view->fetch('module/product/catalogue');
+        } else {
+            $this->view->assign('catalogue', $catalogue);
+            $this->view->assign('product_list', $product_list);
+            $this->content = $this->view->fetch('module/product/product');
+        }
     }
 
     protected function actionMenu()
     {
-        $catalogue_tree = Model::factory('catalogue')->getTree(
-            Model::factory('catalogue')->getList(
-                array('catalogue_active' => 1), array('catalogue_order' => 'asc')
-            )
+        $catalogue_list = Model::factory('catalogue')->getList(
+            array('catalogue_active' => 1), array('catalogue_order' => 'asc')
         );
+        
+        $catalogue_name = System::getParam('catalogue');
+        
+        if ($catalogue_name) {
+            $catalogue = $this->getCatalogue($catalogue_name);
+            $selected_list = array($catalogue->getId());
+            
+            while ($catalogue->getCatalogueParent()) {
+                $catalogue_parent = Model::factory('catalogue')->get(
+                    $catalogue->getCatalogueParent()
+                );
+                $selected_list[] = $catalogue_parent->getId();
+                $catalogue = $catalogue_parent;
+            }
+            foreach ($catalogue_list as $catalogue_index => $catalogue_item) {
+                if (in_array($catalogue_item->getId(), $selected_list)) {
+                    $catalogue_list[$catalogue_index]->setSelected(true);
+                }
+            }
+        }
+        
+        $catalogue_tree = Model::factory('catalogue')->getTree($catalogue_list);
 
         $this->view->assign($catalogue_tree);
         $this->content = $this->view->fetch('module/product/menu');
@@ -42,30 +63,27 @@ class ProductModule extends Module
     {
         $product = $this->getProduct(System::id());
         
-        $this->view->assign('product', $product);
-        $this->view->assign('client', ClientModule::getInfo());
+        $this->view->assign($product);
         $this->content = $this->view->fetch('module/product/item');
     }
     
     protected function actionVote()
     {
         $product = $this->getProduct(System::id());
+        $product->addMark(min(5, max(1, init_string('mark'))))->save();
         
-        if (($client = ClientModule::getInfo()) && !$client->isVote($product)) {
-            $product->addMark(min(5, max(1, init_string('mark'))))->save();
-            $client->setVote($product);
-        }
-        
-        $this->content = json_encode(
-            array('rating' => $product->getProductRating())
-        );
+        $this->content = json_encode(array(
+            'id' => $product->getId(),
+            'rating' => $product->getProductRating(),
+            'count' => $product->getProductVoters()
+        ));
     }
     
     protected function actionMarker()
     {
 		foreach (array('discount', 'leader', 'novelty') as $marker_name) {
 			$marker = Model::factory('marker')->getByName($marker_name);
-			$product_list = Model::factory('product')->getByMarker($marker);
+			$product_list = Model::factory('product')->getByMarker($marker, 4);
 			
 			$marker_view = new View();
 			$marker_view->assign('marker', $marker);
@@ -73,6 +91,17 @@ class ProductModule extends Module
 			
 			$this->content .= $marker_view->fetch('module/product/marker');
 		}        
+    }
+    
+    protected function actionMarkerList()
+    {
+        $marker_name = System::getParam('marker');
+        $marker = Model::factory('marker')->getByName($marker_name);
+		$product_list = Model::factory('product')->getByMarker($marker);
+		
+        $this->view->assign('marker', $marker);
+		$this->view->assign('product_list', $product_list);
+        $this->content = $this->view->fetch('module/product/marker');
     }
 
     /**

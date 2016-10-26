@@ -8,24 +8,24 @@ $routes = array(
         'controller' => 'product',
         'catalogue' => '\w+',
     ),
-    
-    // Путь к товару
-    '/product/@catalogue/@id' => array(
+
+    // Путь для голосования
+    '/product/vote/@id' => array(
         'controller' => 'product',
-        'catalogue' => '\w+',
-        'action' => 'item',
+        'action' => 'vote',
     ),
-    
-    // Путь к маркеру
+
+    // Путь к фильтру
     '/product/marker/@marker' => array(
         'controller' => 'product',
         'marker' => '\w+',
         'action' => 'marker_list',
     ),
-    
-    // Путь для голосования
-    '/product/vote/@id' => array(
+
+    // Путь к товару
+    '/product/@catalogue/@id' => array(
         'controller' => 'product',
-        'action' => 'vote',
+        'catalogue' => '\w+',
+        'action' => 'item',
     ),
 );

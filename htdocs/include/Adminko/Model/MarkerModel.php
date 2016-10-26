@@ -1,7 +1,6 @@
 <?php
 namespace Adminko\Model;
 
-use Adminko\System;
 use Adminko\Db\Db;
 
 class MarkerModel extends Model
