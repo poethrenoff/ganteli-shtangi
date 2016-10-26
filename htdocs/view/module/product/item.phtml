@@ -1,0 +1,90 @@
+                <div class="product">
+                    <h1><?= $this->getProductTitle() ?></h1>
+                    
+                    <div class="image">
+<?php $picture_list = $this->getPictureList(); ?>
+                        <div class="thumbnail">
+<?php if (count($picture_list) > 1) { ?>
+<?php   foreach ($this->getPictureList() as $picture_item) { ?>
+                            <a href=""><img src="<?= $picture_item->getPictureImage() . '/c/50/50' ?>" /></a>
+<?php   } ?>
+<?php } ?>
+                        </div>
+                        <div class="gallery">
+<?php foreach ($this->getPictureList() as $picture_item) { ?>
+                            <a data-lightbox="product" href="<?= $picture_item->getPictureImage() ?>"><img src="<?= $picture_item->getPictureImage() . '/r/330/330' ?>" /></a>
+<?php } ?>
+                        </div>
+
+                        <link rel="stylesheet" href="/css/lightbox.css" />
+                        <script src="/js/lightbox.min.js"></script>
+
+                        <script>
+                            $(document).ready(function(){
+                                lightbox.option({
+                                    'showImageNumberLabel': false
+                                });
+                                $('.thumbnail a').click(function(){
+                                    var slideIndex = $(this).index();
+                                    $('.gallery a').each(function(){
+                                        $(this).toggle($(this).index() == slideIndex);
+                                    });
+                                    $('.thumbnail a').each(function(){
+                                        $(this).toggleClass('selected', $(this).index() == slideIndex);
+                                    });
+                                    return false;
+                                });
+                                $('.thumbnail a:first').click();
+                            });
+                        </script>
+                    </div>
+                    
+                    <div class="info">
+<?php           if ($brand = $this->getBrand()) { ?>
+                        <div class="brand">
+                            <b>Производитель:</b> <?= $brand->getBrandTitle()?>
+                        </div>
+<?php           } ?>
+                        <div class="price">
+<?php           if ($this->getProductPriceOld()) { ?>
+                            <span class="price-new"><?= number_format($this->getProductPrice(), 0, 0, ' ') ?> <span class="rouble">Р</span></span>
+                            <span class="price-old"><?= number_format($this->getProductPriceOld(), 0, 0, ' ') ?> <span class="rouble">Р</span></span>
+<?php           } else { ?>
+                            <span class="price"><?= number_format($this->getProductPrice(), 0, 0, ' ') ?> <span class="rouble">Р</span></span>
+<?php           } ?>
+                        </div>
+                        <div class="vote" data-vote-id="<?= $this->getId() ?>" data-vote-rating="<?= round($this->getProductRating()) ?>">
+<?php for ($i = 1; $i <= 5; $i++) { ?>
+                            <div class="star"></div>
+<?php  } ?>
+                            <div class="count"><?= $this->getProductVoters() ?></div>
+                        </div>
+                        <div class="cart">
+                            <input type="button" value="В корзину" onclick="buyItem(<?= $this->getId() ?>, $('.gallery'))" />
+                        </div>
+<?php           if ($this->getProductStock()) { ?>
+                        <div class="state available">
+                            В наличии
+                        </div>
+<?php           } else { ?>
+                        <div class="state not-available">
+                            Под заказ
+                        </div>
+<?php           } ?>
+                    </div>
+                    
+                    <div class="description">
+<?= $this->getProductDescription() ?>
+                        
+<?php if ($this->getProductInstruction()) { ?>
+                        <div class="instruction">
+                            <a href="<?= $this->getProductInstruction() ?>">Скачать инструкцию</a>
+                        </div>
+<?php } ?>
+<?php if ($this->getProductVideo()) { ?>
+                        <div class="video">
+                            <?= $this->getProductVideo() ?>
+                        </div>
+<?php } ?>
+                    </div>
+                </div>

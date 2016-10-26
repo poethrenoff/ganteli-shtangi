@@ -1,0 +1,18 @@
+                <h1><?= $this->catalogue->getCatalogueTitle() ?></h1>
+                <div class="catalogue_list">
+<?php foreach ($this->catalogue_list as $catalogue_item) { ?>
+                    <div class="catalogue_item">
+                        <div class="image">
+                            <a href="<?= $catalogue_item->getCatalogueUrl() ?>">
+                                <img src="<?= $catalogue_item->getCatalogueImage() . '/r/170/170' ?>" />
+                            </a>
+                        </div>
+                        <div class="title">
+                            <a href="<?= $catalogue_item->getCatalogueUrl() ?>"><?= $catalogue_item->getCatalogueTitle() ?></a>
+                        </div>
+                    </div>
+<?php } ?>
+                </div>
+<?php if ($this->catalogue->getCatalogueDescription()) { ?>
+<?= $this->catalogue->getCatalogueDescription() ?>
+<?php } ?>

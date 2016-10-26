@@ -1,0 +1,50 @@
+                <div class="product_list">
+<?php foreach ($this->product_list as $product_item) { ?>
+                    <div class="product_item">
+                        <div class="image">
+                            <a href="<?= $product_item->getProductUrl() ?>">
+<?php 		$marker_list = $product_item->getMarkerList(); ?>
+<?php       if ($marker_list) { ?>
+                                <div class="marker_list">
+<?php           foreach ($marker_list as $marker_item) { ?>
+                                    <div class="marker <?= $marker_item->getMarkerName() ?>">
+                                        <span><?= $marker_item->getMarkerLegend() ?></span>
+                                    </div>
+<?php           } ?>
+                                </div>
+<?php       } ?>
+                                <img src="<?= $product_item->getProductImage() . '/r/170/170' ?>" />
+                            </a>
+                        </div>
+                        <div class="title">
+                            <a href="<?= $product_item->getProductUrl() ?>"><?= $product_item->getProductTitle() ?></a>
+                        </div>
+                        <div class="price">
+<?php           if ($product_item->getProductPriceOld()) { ?>
+                            <span class="price-new"><?= number_format($product_item->getProductPrice(), 0, 0, ' ') ?> <span class="rouble">Р</span></span>
+                            <span class="price-old"><?= number_format($product_item->getProductPriceOld(), 0, 0, ' ') ?> <span class="rouble">Р</span></span>
+<?php           } else { ?>
+                            <span class="price"><?= number_format($product_item->getProductPrice(), 0, 0, ' ') ?> <span class="rouble">Р</span></span>
+<?php           } ?>
+                        </div>
+                        <div class="vote" data-vote-id="<?= $product_item->getId() ?>" data-vote-rating="<?= round($product_item->getProductRating()) ?>">
+<?php for ($i = 1; $i <= 5; $i++) { ?>
+                            <div class="star"></div>
+<?php  } ?>
+                            <div class="count"><?= $product_item->getProductVoters() ?></div>
+                        </div>
+                        <div class="cart">
+                            <input type="button" value="В корзину" onclick="buyItem(<?= $product_item->getId() ?>, $(this).parents('.product_item:first').find('.image'))" />
+                        </div>
+<?php           if ($product_item->getProductStock()) { ?>
+                        <div class="state available">
+                            В наличии
+                        </div>
+<?php           } else { ?>
+                        <div class="state not-available">
+                            Под заказ
+                        </div>
+<?php           } ?>
+                    </div>
+<?php } ?>
+                </div>
