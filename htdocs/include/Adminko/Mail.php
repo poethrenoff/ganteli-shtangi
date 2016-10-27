@@ -14,7 +14,11 @@ class Mail
     {
         $mail = new \PHPMailer();
         
+        $mail->CharSet = 'utf-8';
+        $mail->Encoding = 'base64';
         $mail->setLanguage('ru');
+        $mail->isHtml(true);
+        
         $mail->Subject = $subject;
         $mail->setFrom($from, $name);
 

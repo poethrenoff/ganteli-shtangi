@@ -2,8 +2,6 @@
 
 <p>Ваш заказ №<?= $this->purchase->getId() ?>:</p>
 
-<img src="https://www.google.ru/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" />
-
 <p>
 <?php $item_index = 1; ?>
 <?php foreach ($this->purchase->getItemList() as $purchase_item) { ?>
