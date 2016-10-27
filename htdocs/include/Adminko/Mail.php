@@ -1,7 +1,7 @@
 <?php
 namespace Adminko;
 
-include_once CLASS_DIR . 'swiftmailer/lib/swift_required.php';
+include_once CLASS_DIR . 'PHPMailer/PHPMailerAutoload.php';
 
 class Mail
 {
@@ -12,44 +12,35 @@ class Mail
 
     public static function prepareMessage($from, $name, $subject, $body, $files = array())
     {
-        $message = \Swift_Message::newInstance();
+        $mail = new \PHPMailer();
+        
+        $mail->setLanguage('ru');
+        $mail->Subject = $subject;
+        $mail->setFrom($from, $name);
 
         $body = preg_replace_callback( 
-            '/src=\"(.+)\"/isU', 
-            function($match) use ($message) {
-                $path_parts = pathinfo($match[1]);
-                $filename = $path_parts['basename'];
-                $mime_type = 'image/' . strtolower($path_parts['extension']);
-
+            '/src=\"(.+)\"/isU',
+            function($match) use ($mail) {
+                $path_parts = pathinfo($match[1]); $cid = uniqid();
                 if ($img_data = file_get_contents($match[1])) {
-                    $cid = $message->embed(\Swift_Image::newInstance($img_data, $filename, $mime_type));
-                } else {
-                    $cid = $match[1];
+                    $mail->addStringEmbeddedImage($img_data, $cid, $path_parts['basename']);
                 }
-                return 'src="' . $cid . '"';
-            }, $body 
-        ); 
-
-        $message
-            ->setSubject($subject)
-            ->setFrom(array($from => $name))
-            ->setBody($body, 'text/html');
-
+                return 'src="cid:' . $cid . '"';
+            }, $body
+        );
+        $mail->Body = $body;
+        
         foreach ($files as $file_name => $file_path) {
-            $message->attach(\Swift_Attachment::fromPath($file_path));
+            $mail->addAttachment($file_path);
         }
         
-        return $message;
+        return $mail;
     }
     
-    public static function sendMessage($to, $message)
+    public static function sendMessage($to, $mail)
     {
-        $message->setTo($to);
+        $mail->addAddress($to);
         
-        $transport = \Swift_MailTransport::newInstance();
-        
-        $mailer = \Swift_Mailer::newInstance($transport);
-        
-        return $result = $mailer->send($message);
+        return $mail->send();
     }
 }

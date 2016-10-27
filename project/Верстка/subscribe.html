@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Гантели и штанги</title>
+        <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/rouble/stylesheet.css" />
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/interface.js"></script>
+    </head>
+    <body>
+        <div class="main">
+            <header>
+                <div class="logo">
+                    <a href="/"></a>
+                </div>
+                <div class="search">
+                    <form method="get" action="/search">
+                        <input type="search" name="query" placeholder="Поиск" />
+                        <input type="submit" value="" />
+                    </form>
+                </div>
+                <div class="contact">
+                    <span class="phone">+7 (495) 796-32-34<br/>
+                        +7 (925) 777-65-84</span><br/>
+                    info@ganteli-shtangi.ru<br/><br/>
+                    <a href="/callback" class="callback">
+                        Заказать обратный звонок
+                    </a>
+                </div>
+                <div class="info">
+                    <a class="subscribe" href="/subscribe">
+                        Регистрация для оптовых покупателей
+                    </a>
+                    <a class="cart" href="/cart/">
+                        <div class="cart_summary">
+                            Корзина (0)
+                        </div>
+                        <div class="cart_total">
+                            на сумму 0 <span class="rouble">Р</span>
+                        </div>
+                    </a>
+                </div>
+            </header>
+
+            <nav>
+                <a href="/">О компании</a>
+                <a class="selected" href="/">Оплата и доставка</a>
+                <a href="/">Гарантии и сервис</a>
+                <a href="/">Оптовикам</a>
+                <a href="/">Контакты</a>
+            </nav>
+
+            <aside>
+                <h1>Каталог</h1>
+                <a class="lvl1" href="/product/kardiotrenazhery">Кардиотренажеры</a>
+                <a class="lvl2" href="/product/begovye_dorozhki">Беговые дорожки</a>
+                <a class="lvl2" href="/product/ellipticheskie_trenazhery">Эллиптические тренажеры</a>
+                <a class="lvl2" href="/product/velotrenazhery">Велотренажеры</a>
+                <a class="lvl1" href="">Диски</a>
+                <a class="lvl2" href="">Олимпийские</a>
+                <a class="lvl3" href="">Обрезиненные</a>
+                <a class="lvl3" href="">Полиуретановые</a>
+                <a class="lvl3" href="">Hammerton</a>
+                <a class="lvl3" href="">Резиновые</a>
+                <a class="lvl2" href="">Домашние (25 мм)</a>
+                <a class="lvl1" href="/product/silovye_trenazhery">Силовые тренажеры Alex, WNQ</a>
+                <a class="lvl2" href="/product/multistancii_wnq">Силовые мультистанции WNQ</a>
+                <a class="lvl2" href="/product/skami_i_stoyki">Скамьи и стойки</a>
+                <a class="lvl1" href="/product/silovye_trenazhery">Тренажеры BodySolid</a>
+                <a class="lvl2" href="/product/multistancii_bodysolid">Мультистанции BodySolid</a>
+                <a class="lvl2" href="/product/blochnye_trenazhery_pro_club_line">Блочные PRO-CLUB LINE PRO-CLUB LINE</a>
+                <a class="lvl2" href="/product/svobodnye_vesa_pro_club_line">Св. веса PRO CLUB LINE</a>
+                <a class="lvl2" href="/product/blochnye_trenazhery_pro_dual_line_dva_v_odnom">PRO DUAL LINE</a>
+                <a class="lvl2" href="/product/trenazhery_bodysolid_s_nagruzkoy_na_svobodnyh_vesah">Свободные веса</a>
+                <a class="lvl2" href="/product/sportivnye_skami_i_stoyki_bodysolid">Скамьи и стойки</a>
+                <a class="lvl2" href="/product/trenazhery_bodysolid_serii_powerline">POWERLINE</a>
+                <a class="lvl2" href="/product/opcii_dlya_raboty_so_svobodnymi_vesami">Опции</a>
+                <a class="lvl1" href="/product/silovye_trenazhery_steel_flex">Силовые тренажеры Steel Flex</a>
+                <a class="lvl2" href="/product/steel_flex_mega_power">STEEL FLEX Mega power</a>
+                <a class="lvl2" href="/product/steel_flex_neo">STEEL FLEX Neo</a>
+                <a class="lvl2" href="/product/svobodnye_vesa_steel_flex">STEEL FLEX Plate Loaded</a>
+            </aside>
+
+            <article>
+                <h1>Станьте нашим оптовым покупателем!</h1>
+                <p>Если Вы хотите работать с нашей компнией на постоянной основе, заполните анкету на данной странице. В ответ наш менеджер вышлет Вам информацию об условиях сотрудничества и актуальный прайс-лист. Рассылка прайс-листа осуществляется не чаще 1 раза в месяц.</p>
+                <form method="post">
+                    <div class="field">
+                        E-mail: <span class="require">*</span><br />
+                        <input type="text" name="email" value="" />
+                        <span class="error">Поле обязательно для заполнения</span>
+                    </div>
+                    <div class="field">
+                        Ваше имя, фамилия, отчество: <span class="require">*</span><br />
+                        <input type="text" name="person" value="" />
+                        <span class="error">Поле обязательно для заполнения</span>
+                    </div>
+                    <div class="field">
+                        Название компании (для юрлиц):<br />
+                        <input type="text" name="name" value="" />
+                    </div>
+                    <div class="field">
+                        Тип компании (для юрлиц обязательно):<br />
+                        <select name="type">
+                            <option value=""></option>
+                            <option value="1">Оптовая</option>
+                            <option value="2">Розничная</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        Телефон (для юрлиц обязательно):<br />
+                        <input type="text" name="phone" value="" />
+                    </div>
+                    <div class="field">
+                        Факс (для юрлиц обязательно):<br />
+                        <input type="text" name="fax" value="" />
+                    </div>
+                    <div class="field captcha">
+                        Введите символы с картинки: <span class="require">*</span><br />
+                        <img src="/image/captcha.php" />
+                        <input type="text" name="captcha" value="" />
+                        <span class="error">Поле обязательно для заполнения</span>
+                        <br/><br/>
+                    </div>
+                    <div class="field">
+                        <input type="submit" value="Зарегистрироваться" />
+                    </div>
+                </form>
+
+            </article>
+        </div>
+        <footer>
+            <div class="copyright">
+                Copyright © 2016
+            </div>
+            <div class="address">
+                119049, г. Москва, 1-й Добрынинский переулок, д.19, строение 6, ООО "Фортиус групп"<br/>
+            </div>
+            <div class="contact">
+                <span class="phone">+7 (495) 796-32-34<br/>
+                    +7 (925) 777-65-84</span><br/>
+                info@ganteli-shtangi.ru
+            </div>
+        </footer>
+    </body>
+</html>

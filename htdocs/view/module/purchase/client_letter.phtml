@@ -1,0 +1,29 @@
+<p>Спасибо Вам за заказ в интернет-магазине Ganteli-Shtangi.RU!</p>
+
+<p>Ваш заказ №<?= $this->purchase->getId() ?>:</p>
+
+<img src="https://www.google.ru/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" />
+
+<p>
+<?php $item_index = 1; ?>
+<?php foreach ($this->purchase->getItemList() as $purchase_item) { ?>
+<?php 	$product = Adminko\Model\Model::factory('product')->get($purchase_item->getItemProduct()); ?>
+<?= $item_index ?>. <?= $product->getProductTitle() ?> x <?= $purchase_item->getItemQuantity() ?> шт.<br/>
+<?php   $item_index++; ?>
+<?php } ?>
+</p>
+
+<p>Общая стоимость заказа: <?= $this->purchase->getPurchaseSum() ?> р.</p>
+
+<p>
+Вы указали следующие контактные данные:<br/>
+Контактное лицо: <?= $this->purchase->getPurchasePerson() ?><br/>
+Email: <?= $this->purchase->getPurchaseEmail() ?><br/>
+Телефон: <?= $this->purchase->getPurchasePhone() ?><br/>
+Адрес: <?= $this->purchase->getPurchaseAddress() ?><br/>
+Комментарий: <?= $this->purchase->getPurchaseComment() ?>
+</p>
+
+<p>В ближайшее время менеджер свяжется с Вами для уточнения всех деталей.</p>
+
+<p>C уважением<br/>Ganteli-Shtangi.RU</p>

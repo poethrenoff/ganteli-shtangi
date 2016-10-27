@@ -3,6 +3,7 @@ namespace Adminko\Module;
 
 use Adminko\View;
 use Adminko\System;
+use Adminko\Paginator;
 use Adminko\Model\Model;
 
 class ProductModule extends Module
@@ -21,8 +22,12 @@ class ProductModule extends Module
             $this->view->assign('catalogue_list', $catalogue_list);
             $this->content = $this->view->fetch('module/product/catalogue');
         } else {
+            $pages = Paginator::create(count($product_list), array('by_page' => 20));
+            $product_list = array_slice($product_list, $pages['offset'], 20);
+            
             $this->view->assign('catalogue', $catalogue);
             $this->view->assign('product_list', $product_list);
+            $this->view->assign('pages', Paginator::fetch($pages));
             $this->content = $this->view->fetch('module/product/product');
         }
     }
@@ -99,8 +104,12 @@ class ProductModule extends Module
         $marker = Model::factory('marker')->getByName($marker_name);
 		$product_list = Model::factory('product')->getByMarker($marker);
 		
+        $pages = Paginator::create(count($product_list), array('by_page' => 20));
+        $product_list = array_slice($product_list, $pages['offset'], 20);
+        
         $this->view->assign('marker', $marker);
 		$this->view->assign('product_list', $product_list);
+        $this->view->assign('pages', Paginator::fetch($pages));
         $this->content = $this->view->fetch('module/product/marker');
     }
 

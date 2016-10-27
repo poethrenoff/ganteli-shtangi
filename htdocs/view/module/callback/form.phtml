@@ -1,0 +1,36 @@
+                <h1>Заказать обратный звонок</h1>
+                <form method="post">
+                    <div class="field">
+                        Ваше имя: <span class="require">*</span><br />
+                        <input type="text" value="<?= $this->escape($this->fromRequest('callback_person')) ?>" name="callback_person" />
+<?php if ($this->error['callback_person']) { ?>
+                        <span class="error"><?= $this->error['callback_person'] ?></span>
+<?php } ?>
+                    </div>
+                    <div class="field">
+                        Ваш телефон: <span class="require">*</span><br />
+                        <input type="text" value="<?= $this->escape($this->fromRequest('callback_phone')) ?>" name="callback_phone" />
+<?php if ($this->error['callback_phone']) { ?>
+                        <span class="error"><?= $this->error['callback_phone'] ?></span>
+<?php } ?>
+                    </div>
+                    <div class="field">
+                        Комментарий:<br />
+                        <textarea name="callback_comment"><?= $this->escape($this->fromRequest('callback_comment')) ?></textarea>
+<?php if ($this->error['callback_comment']) { ?>
+                        <span class="error"><?= $this->error['callback_comment'] ?></span>
+<?php } ?>
+                    </div>
+                    <div class="field captcha">
+                        Введите символы с картинки: <span class="require">*</span><br />
+                        <img src="/image/captcha.php" />
+                        <input type="text" name="callback_captcha" value="" autocomplete="no" />
+<?php if ($this->error['callback_captcha']) { ?>
+                        <span class="error"><?= $this->error['callback_captcha'] ?></span>
+<?php } ?>
+                        <br/><br/>
+                    </div>
+                    <div class="field">
+                        <input type="submit" value="Заказать звонок" class="button" />
+                    </div>
+                </form>

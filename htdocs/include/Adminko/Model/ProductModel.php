@@ -78,7 +78,7 @@ class ProductModel extends Model
         $search_words = preg_split('/\s+/', $search_value);
             
         $filter_clause = array();
-        foreach (array('product_article', 'product_title', 'product_description') as $field_name) {
+        foreach (array('product_title', 'product_description') as $field_name) {
             $field_filter_clause = array();
             foreach ($search_words as $search_index => $search_word) {
                 $field_prefix = $field_name . '_' . $search_index;

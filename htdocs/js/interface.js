@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    $("img.lazy").lazyload({
+        effect : "fadeIn"
+    });
+    
     $('#up-arrow').on('click', function(e) {
         e.preventDefault();
         $('html, body').animate({

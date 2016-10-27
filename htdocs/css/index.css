@@ -3,27 +3,38 @@ body {
     padding: 0px;
     color: #555555;
     background-color: #ffffff;
-
+}
+* {
     font-size: 14px;
     font-family: Helvetica, Arial, sans-serif;
 }
 h1, h2, h3 {
     color: #333333;
     font-weight: bold;
-    text-transform: uppercase;
     margin: 0px 0px 15px 0px;
 }
 h1 {
     font-size: 16px;
+    text-transform: uppercase;
 }
 h2 {
     font-size: 15px;
+    text-transform: uppercase;
 }
 h3 {
     font-size: 14px;
 }
 a {
     color: #008fc3;
+}
+h1 a {
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+    text-decoration: none;
+}
+h1 a:hover {
+    text-decoration: underline;
 }
 
 div.main {
@@ -49,7 +60,7 @@ header .logo a {
     display: inline-block;
     width: 200px;
     height: 136px;
-    background: url('/img/logo.png') no-repeat center;
+    background: url('/image/logo.png') no-repeat center;
 }
 
 header .search {
@@ -71,7 +82,7 @@ header .search input[type=submit] {
     border: none;
     box-sizing: border-box;
     border-radius: 0px 3px 3px 0px;
-    background: url('/img/search.png');
+    background: url('/image/search.png');
 }
 
 header .contact {
@@ -107,7 +118,7 @@ header .info a.cart {
     width: 160px;
     text-align: left;
     padding: 10px 0px 10px 75px;
-    background: url('/img/cart.png') no-repeat left;
+    background: url('/image/cart.png') no-repeat left;
     text-decoration: none;
     line-height: 20px;
 }
@@ -236,7 +247,7 @@ footer .contact .phone{
     height: 36px;
     z-index: 100;
     opacity: 0;
-    background: url('/img/up-arrow.png');
+    background: url('/image/up-arrow.png');
     transition: opacity 0.2s ease-out, visibility 1s ease-out;
 }
 
@@ -255,15 +266,6 @@ section {
 
 div.product_list {
     margin-bottom: 20px;
-}
-div.product_list h1 a {
-    float: right;
-    font-size: 12px;
-    font-weight: normal;
-    text-decoration: none;
-}
-div.product_list h1 a:hover {
-    text-decoration: underline;
 }
 
 div.product_item {
@@ -311,19 +313,19 @@ div.product_item div.image .marker_list .marker span {
     font-weight: bold;
 }
 div.product_item div.image .marker_list .marker.leader {
-    background: url('/img/marker.png');
+    background: url('/image/marker.png');
 }
 div.product_item div.image .marker_list .marker.leader span {
     font-size: 12px;
 }
 div.product_item div.image .marker_list .marker.discount {
-    background: url('/img/marker.png') 0 46px;
+    background: url('/image/marker.png') 0 46px;
 }
 div.product_item div.image .marker_list .marker.discount span {
     font-size: 10px;
 }
 div.product_item div.image .marker_list .marker.novelty {
-    background: url('/img/marker.png') 0 92px;
+    background: url('/image/marker.png') 0 92px;
 }
 div.product_item div.image .marker_list .marker.novelty span {
     font-size: 12px;
@@ -368,10 +370,10 @@ div.product_item div.vote div.star, div.product div.info div.vote div.star {
     display: inline-block;
     width: 13px;
     height: 13px;
-    background: url(/img/stars.png) 13px 0px;
+    background: url(/image/stars.png) 13px 0px;
 }
 div.product_item div.vote div.star.active, div.product div.info div.vote div.star.active {
-    background: url(/img/stars.png) 0px 0px;
+    background: url(/image/stars.png) 0px 0px;
 }
 div.product_item div.vote div.count, div.product div.info div.vote div.count {
     display: inline-block;
@@ -557,7 +559,7 @@ form .field.captcha img {
     margin-right: 10px;
 }
 form .field.captcha input[type=text] {
-    width: 140px;
+    width: 110px;
 }
 form .field input[type=submit] {
     width: 150px;
@@ -641,10 +643,10 @@ table.cart td.quantity a.plus, table.cart td.quantity a.minus {
     height: 13px;
 }
 table.cart td.quantity a.plus {
-    background: url('/img/plus.png') no-repeat;
+    background: url('/image/plus.png') no-repeat;
 }
 table.cart td.quantity a.minus {
-    background: url('/img/minus.png') no-repeat;
+    background: url('/image/minus.png') no-repeat;
 }
 table.cart td.cost {
     width: 100px;
@@ -660,7 +662,7 @@ table.cart td.delete a.delete {
     padding-left: 20px;
     color: #555555;
     text-decoration: none;
-    background: url('/img/delete.png') no-repeat 0px 2px;
+    background: url('/image/delete.png') no-repeat 0px 2px;
 }
 table.cart td.delete a.delete:hover {
     text-decoration: underline;
@@ -668,7 +670,7 @@ table.cart td.delete a.delete:hover {
 table.cart td.total {
     text-align: center;
 }
-input.order, input.clear {
+input.button {
     width: 150px;
     height: 30px;
     border: none;
@@ -678,4 +680,36 @@ input.order, input.clear {
     color: #ffffff;
     font-size: 14px;
     cursor: pointer;
+}
+
+div.pages {
+    float: right;
+    padding-right: 10px;
+}
+div.pages ul {
+    margin: -5px 10px 0px 0px;
+}
+div.pages li {
+    display: inline;
+}
+div.pages li a,
+div.pages li span {
+  float: left;
+  display: inline-block;
+  margin-left: -1px;
+  padding: 4px 12px;
+  text-decoration: none;
+  color: #555555;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+}
+div.pages li a:hover,
+div.pages li span:hover {
+  background-color: #eeeeee;
+}
+div.pages .selected span,
+div.pages .selected span:hover {
+  color: #ffffff;
+  border: 1px solid #008fc3;
+  background-color: #008fc3;
 }

@@ -1,0 +1,13 @@
+                <h1>Результаты поиска</h1>
+<?= $this->pages ?>
+                <h3>
+                    По запросу "<?= $this->escape($this->fromRequest('text')) ?>"
+<?php if ($this->product_list) { ?>
+                    найдено <?= decl_of_num($this->total, array('товар', 'товара', 'товаров')) ?>
+<?php } else { ?>
+                    ничего не найдено
+<?php } ?>
+                </h3>
+<?php if ($this->product_list) { ?>  
+<?= Adminko\View::block('module/product/product_list', array('product_list' => $this->product_list)) ?>
+<?php } ?>
