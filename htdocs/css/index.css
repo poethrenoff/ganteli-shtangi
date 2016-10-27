@@ -201,6 +201,13 @@ aside a:hover {
 div.teaser {
     height: 360px;
     margin-bottom: 20px;
+    overflow: hidden;
+    background: url('/image/loading.gif') no-repeat center;
+}
+div.teaser ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
 }
 
 article {

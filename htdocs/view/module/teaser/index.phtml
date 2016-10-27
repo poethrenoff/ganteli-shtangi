@@ -1,16 +1,22 @@
             <div class="teaser">
-                <div id="bx-slider">
+                <div id="unslider">
+                    <ul>
 <?php foreach ($this->teaser_list as $teaser_item) { ?>
-                    <img src="<?= $teaser_item->getTeaserImage() ?>" />
+                        <li><img src="<?= $teaser_item->getTeaserImage() ?>" />
 <?php } ?>
+                    </ul> 
                 </div>
 
-                <link rel="stylesheet" href="/css/bxslider.css" />
-                <script src="/js/bxslider.min.js"></script>
+                <link rel="stylesheet" href="/css/unslider.css" />
+                <script src="/js/unslider.min.js"></script>
 
                 <script>
-                    $(document).ready(function(){
-                        $('#bx-slider').bxSlider().startAuto();
+                    $(document).ready(function($) {
+                        $('#unslider').unslider({
+                            autoplay: true, infinite: true,
+                            arrows: false, nav: false,
+                            speed: 400, delay: 5000
+                        });
                     });
                 </script>
             </div>
