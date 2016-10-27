@@ -94,7 +94,6 @@ header .contact .phone {
 }
 header .contact .callback {
     text-decoration: none;
-    text-transform: uppercase;
 }
 header .contact .callback:hover {
     text-decoration: underline;
