@@ -1,17 +1,17 @@
                 <div class="product_list">
 <?php foreach ($this->product_list as $product_item) { ?>
                     <div class="product_item">
+                        <div class="marker_list">
+<?php           foreach ($marker_list as $marker_item) { ?>
+                            <div class="marker <?= $marker_item->getMarkerName() ?>">
+                                <span><?= $marker_item->getMarkerLegend() ?></span>
+                            </div>
+<?php           } ?>
+                        </div>
                         <div class="image">
                             <a href="<?= $product_item->getProductUrl() ?>">
 <?php 		$marker_list = $product_item->getMarkerList(); ?>
 <?php       if ($marker_list) { ?>
-                                <div class="marker_list">
-<?php           foreach ($marker_list as $marker_item) { ?>
-                                    <div class="marker <?= $marker_item->getMarkerName() ?>">
-                                        <span><?= $marker_item->getMarkerLegend() ?></span>
-                                    </div>
-<?php           } ?>
-                                </div>
 <?php       } ?>
                                 <img class="lazy" data-original="<?= $product_item->getProductImage() . '/r/170/170' ?>" />
                             </a>

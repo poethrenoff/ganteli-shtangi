@@ -1,7 +1,14 @@
 $(document).ready(function(){
-    $("img.lazy").lazyload({
-        effect : "fadeIn"
-    });
+    if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        $('img.lazy').lazyload({
+            effect : "fadeIn",
+			placeholder : "/image/loading.gif"
+        });
+    } else {
+        $('img').each(function(){
+            $(this).attr('src',$(this).data('original'));
+        });
+    }
     
     $('#up-arrow').on('click', function(e) {
         e.preventDefault();

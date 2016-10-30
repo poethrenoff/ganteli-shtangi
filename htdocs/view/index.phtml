@@ -12,53 +12,55 @@
         <script src="/js/interface.js"></script>
     </head>
     <body>
-        <div class="main">
-            <header>
-                <div class="logo">
-                    <a href="/"></a>
-                </div>
-                <div class="search">
+        <div class="wrapper">
+            <div class="content">
+                <header>
+                    <div class="logo">
+                        <a href="/"></a>
+                    </div>
+                    <div class="search">
 <?= $this->search ?>
-                </div>
-                <div class="contact">
+                    </div>
+                    <div class="contact">
 <?= $this->header_contact ?>
-                </div>
-                <div class="info">
+                    </div>
+                    <div class="info">
 <?= $this->cart ?>
-                </div>
-            </header>
+                    </div>
+                </header>
 
-            <nav>
+                <nav>
 <?= $this->menu ?>
-            </nav>
+                </nav>
 
 <?php if ($this->teaser) { ?>
 <?= $this->teaser ?>
 
 <?php } ?>
-            <aside>
+                <aside>
 <?= $this->catalogue ?>
-            </aside>
+                </aside>
 
-            <article>
+              <article>
 <?php if ($this->marker) { ?>
 <?= $this->marker ?>
 
 <?php } ?>
 <?= $this->content ?>
-            </article>
-        </div>
-        <footer>
-            <div class="copyright">
+                </article>
+            </div>
+            <footer>
+                <div class="copyright">
 <?= $this->copyright ?>
-            </div>
-            <div class="address">
+                </div>
+                <div class="address">
 <?= $this->address ?>
-            </div>
-            <div class="contact">
+                </div>
+                <div class="contact">
 <?= $this->footer_contact ?>
-            </div>
-        </footer>
+                </div>
+            </footer>
+        </div>
         <a id="up-arrow" href=""></a>
         <!-- BEGIN JIVOSITE CODE {literal} -->
         <script type='text/javascript'>

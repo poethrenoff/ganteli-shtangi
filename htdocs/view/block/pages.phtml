@@ -3,7 +3,7 @@
                     <ul>
 <?php      if( $this -> prev_page ) { ?>
                         <li>
-                            <a href="<?= $this->escape( $this -> prev_page['link'] ) ?>">←</a>
+                            <a href="<?= $this->escape( $this -> prev_page['link'] ) ?>">&lt;</a>
                         </li>
 <?php   } ?>
 <?php   foreach( $this -> pages as $page ) { ?>
@@ -19,7 +19,7 @@
 <?php   } ?>
 <?php  	if( $this -> next_page ) { ?>
                         <li>
-                            <a href="<?= $this->escape( $this -> next_page['link'] ) ?>">→</a>
+                            <a href="<?= $this->escape( $this -> next_page['link'] ) ?>">&gt;</a>
                         </li>
 <?php  	} ?>
                     </ul>
