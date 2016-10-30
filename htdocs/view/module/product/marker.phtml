@@ -1,7 +1,7 @@
 <?php if ($this->product_list) { ?>
 <?= $this->pages ?>
-                <h1>
-                    <?= $this->marker->getMarkerTitle() ?><? if (Adminko\System::action() == 'index') { ?> <a href="<?= Adminko\System::urlFor(array('controller' => 'product', 'action' => 'marker_list', 'marker' => $this->marker->getMarkerName())) ?>"><?= $this->marker->getMarkerLink() ?></a><? } ?> 
-                </h1>
+                    <h1>
+                        <?= $this->marker->getMarkerTitle() ?><? if (Adminko\System::action() == 'index') { ?> <a href="<?= Adminko\System::urlFor(array('controller' => 'product', 'action' => 'marker_list', 'marker' => $this->marker->getMarkerName())) ?>"><?= $this->marker->getMarkerLink() ?></a><? } ?> 
+                    </h1>
 <?= Adminko\View::block('module/product/product_list', array('product_list' => $this->product_list)) ?>
 <?php   } ?>

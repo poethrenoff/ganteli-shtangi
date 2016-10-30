@@ -1,27 +1,27 @@
 <?php if( $this -> count > $this -> by_page ) { ?>
-                <div class="pages">
-                    <ul>
+                    <div class="pages">
+                        <ul>
 <?php      if( $this -> prev_page ) { ?>
-                        <li>
-                            <a href="<?= $this->escape( $this -> prev_page['link'] ) ?>">&lt;</a>
-                        </li>
+                            <li>
+                                <a href="<?= $this->escape( $this -> prev_page['link'] ) ?>">&lt;</a>
+                            </li>
 <?php   } ?>
 <?php   foreach( $this -> pages as $page ) { ?>
 <?php		if( $page['link'] ) { ?>
-                        <li>
-                            <a href="<?= $this->escape( $page['link'] ) ?>"><? if ( $page['number'] ) { ?><?= $page['number'] ?><? } else { ?>&hellip;<? } ?></a>
-                        </li>
+                            <li>
+                                <a href="<?= $this->escape( $page['link'] ) ?>"><? if ( $page['number'] ) { ?><?= $page['number'] ?><? } else { ?>&hellip;<? } ?></a>
+                            </li>
 <?php       } else { ?>
-                        <li class="selected">
-                            <span><?= $page['number'] ?></span>
-                        </li>
+                            <li class="selected">
+                                <span><?= $page['number'] ?></span>
+                            </li>
 <?php		} ?>
 <?php   } ?>
 <?php  	if( $this -> next_page ) { ?>
-                        <li>
-                            <a href="<?= $this->escape( $this -> next_page['link'] ) ?>">&gt;</a>
-                        </li>
+                            <li>
+                                <a href="<?= $this->escape( $this -> next_page['link'] ) ?>">&gt;</a>
+                            </li>
 <?php  	} ?>
-                    </ul>
-                </div>
+                        </ul>
+                    </div>
 <?php } ?>

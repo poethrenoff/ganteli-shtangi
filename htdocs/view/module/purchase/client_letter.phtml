@@ -6,7 +6,7 @@
 <?php $item_index = 1; ?>
 <?php foreach ($this->purchase->getItemList() as $purchase_item) { ?>
 <?php 	$product = Adminko\Model\Model::factory('product')->get($purchase_item->getItemProduct()); ?>
-<?= $item_index ?>. <?= $product->getProductTitle() ?> x <?= $purchase_item->getItemQuantity() ?> шт.<br/>
+    <?= $item_index ?>. <?= $product->getProductTitle() ?> x <?= $purchase_item->getItemQuantity() ?> шт.<br/>
 <?php   $item_index++; ?>
 <?php } ?>
 </p>
@@ -14,12 +14,12 @@
 <p>Общая стоимость заказа: <?= $this->purchase->getPurchaseSum() ?> р.</p>
 
 <p>
-Вы указали следующие контактные данные:<br/>
-Контактное лицо: <?= $this->purchase->getPurchasePerson() ?><br/>
-Email: <?= $this->purchase->getPurchaseEmail() ?><br/>
-Телефон: <?= $this->purchase->getPurchasePhone() ?><br/>
-Адрес: <?= $this->purchase->getPurchaseAddress() ?><br/>
-Комментарий: <?= $this->purchase->getPurchaseComment() ?>
+    Вы указали следующие контактные данные:<br/>
+    Контактное лицо: <?= $this->purchase->getPurchasePerson() ?><br/>
+    Email: <?= $this->purchase->getPurchaseEmail() ?><br/>
+    Телефон: <?= $this->purchase->getPurchasePhone() ?><br/>
+    Адрес: <?= $this->purchase->getPurchaseAddress() ?><br/>
+    Комментарий: <?= $this->purchase->getPurchaseComment() ?>
 </p>
 
 <p>В ближайшее время менеджер свяжется с Вами для уточнения всех деталей.</p>

@@ -1,109 +1,109 @@
-                <h1>Оформление заказа</h1>
+                    <h1>Оформление заказа</h1>
 <?php if ($this->cart->getQuantity()) { ?>
-                <table class="cart">
-                    <tr>
-                        <td colspan="2">
-                            Ваш заказ
-                        </td>
-                        <td>
-                            Цена
-                        </td>
-                        <td>
-                            Кол-во
-                        </td>
-                        <td>
-                            Стоимость
-                        </td>
-                        <td>
-                            &nbsp;
-                        </td>
-                    </tr>
+                    <table class="cart">
+                        <tr>
+                            <td colspan="2">
+                                Ваш заказ
+                            </td>
+                            <td>
+                                Цена
+                            </td>
+                            <td>
+                                Кол-во
+                            </td>
+                            <td>
+                                Стоимость
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
 <?php 		foreach ($this->cart->get() as $item) { ?>
 <?php 			$product = Adminko\Model\Model::factory('product')->get($item->id); ?>
-                    <tr>
-                        <td class="image">
-                            <a href="<?= $product->getProductUrl() ?>">
-                                <img src="<?= $product->getProductImage() ?>/r/50/50" />
-                            </a>
-                        </td>
-                        <td class="product">
-                            <a href="<?= $product->getProductUrl() ?>"><?= $product->getProductTitle() ?></a>
-                        </td>
-                        <td class="price">
-                            <?= number_format($item->price, 0, 0, ' ') ?> <span class="rouble">Р</span>
-                        </td>
-                        <td class="quantity">
-                            <?= $item->quantity ?>
-                        </td>
-                        <td class="cost">
-                            <?= number_format($item->price * $item->quantity, 0, 0, ' ') ?> <span class="rouble">Р</span>
-                        </td>
-                        <td class="delete">
-                            &nbsp;
-                        </td>
-                    </tr>
+                        <tr>
+                            <td class="image">
+                                <a href="<?= $product->getProductUrl() ?>">
+                                    <img src="<?= $product->getProductImage() ?>/r/50/50" />
+                                </a>
+                            </td>
+                            <td class="product">
+                                <a href="<?= $product->getProductUrl() ?>"><?= $product->getProductTitle() ?></a>
+                            </td>
+                            <td class="price">
+                                <?= number_format($item->price, 0, 0, ' ') ?> <span class="rouble">Р</span>
+                            </td>
+                            <td class="quantity">
+                                <?= $item->quantity ?>
+                            </td>
+                            <td class="cost">
+                                <?= number_format($item->price * $item->quantity, 0, 0, ' ') ?> <span class="rouble">Р</span>
+                            </td>
+                            <td class="delete">
+                                &nbsp;
+                            </td>
+                        </tr>
             <?php 		} ?>
-                    <tr class="total">
-                        <td colspan="2">
-                            &nbsp;
-                        </td>
-                        <td class="total">
-                            Итого:
-                        </td>
-                        <td class="quantity">
-                            <?= $this->cart->getQuantity() ?>
-                        </td>
-                        <td class="cost">
-                            <?= number_format($this->cart->getSum(), 0, 0, ' ') ?> <span class="rouble">Р</span>
-                        </td>
-                        <td class="delete">
-                            &nbsp;
-                        </td>
-                    </tr>
-                </table>
+                        <tr class="total">
+                            <td colspan="2">
+                                &nbsp;
+                            </td>
+                            <td class="total">
+                                Итого:
+                            </td>
+                            <td class="quantity">
+                                <?= $this->cart->getQuantity() ?>
+                            </td>
+                            <td class="cost">
+                                <?= number_format($this->cart->getSum(), 0, 0, ' ') ?> <span class="rouble">Р</span>
+                            </td>
+                            <td class="delete">
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
 
-                <form method="post">
-                    <div class="field">
-                        Ваше имя: <span class="require">*</span><br />
-                        <input type="text" value="<?= $this->escape($this->fromRequest('purchase_person')) ?>" name="purchase_person" />
+                    <form method="post">
+                        <div class="field">
+                            Ваше имя: <span class="require">*</span><br />
+                            <input type="text" value="<?= $this->escape($this->fromRequest('purchase_person')) ?>" name="purchase_person" />
 <?php if ($this->error['purchase_person']) { ?>
-                        <span class="error"><?= $this->error['purchase_person'] ?></span>
+                            <span class="error"><?= $this->error['purchase_person'] ?></span>
 <?php } ?>
-                    </div>
-                    <div class="field">
-                        Ваш телефон: <span class="require">*</span><br />
-                        <input type="text" value="<?= $this->escape($this->fromRequest('purchase_phone')) ?>" name="purchase_phone" />
+                        </div>
+                        <div class="field">
+                            Ваш телефон: <span class="require">*</span><br />
+                            <input type="text" value="<?= $this->escape($this->fromRequest('purchase_phone')) ?>" name="purchase_phone" />
 <?php if ($this->error['purchase_phone']) { ?>
-                        <span class="error"><?= $this->error['purchase_phone'] ?></span>
+                            <span class="error"><?= $this->error['purchase_phone'] ?></span>
 <?php } ?>
-                    </div>
-                    <div class="field">
-                        Ваш e-mail: <span class="require">*</span><br />
-                        <input type="text" value="<?= $this->escape($this->fromRequest('purchase_email')) ?>" name="purchase_email" />
+                        </div>
+                        <div class="field">
+                            Ваш e-mail: <span class="require">*</span><br />
+                            <input type="text" value="<?= $this->escape($this->fromRequest('purchase_email')) ?>" name="purchase_email" />
 <?php if ($this->error['purchase_email']) { ?>
-                        <span class="error"><?= $this->error['purchase_email'] ?></span>
+                            <span class="error"><?= $this->error['purchase_email'] ?></span>
 <?php } ?>
-                    </div>
-                    <div class="field">
-                        Адрес доставки: <span class="require">*</span><br />
-                        <textarea name="purchase_address"><?= $this->escape($this->fromRequest('purchase_address')) ?></textarea>
+                        </div>
+                        <div class="field">
+                            Адрес доставки: <span class="require">*</span><br />
+                            <textarea name="purchase_address"><?= $this->escape($this->fromRequest('purchase_address')) ?></textarea>
 <?php if ($this->error['purchase_address']) { ?>
-                        <span class="error"><?= $this->error['purchase_address'] ?></span>
+                            <span class="error"><?= $this->error['purchase_address'] ?></span>
 <?php } ?>
-                    </div>
-                    <div class="field">
-                        Комментарий:<br />
-                        <textarea name="purchase_comment"><?= $this->escape($this->fromRequest('purchase_comment')) ?></textarea>
+                        </div>
+                        <div class="field">
+                            Комментарий:<br />
+                            <textarea name="purchase_comment"><?= $this->escape($this->fromRequest('purchase_comment')) ?></textarea>
 <?php if ($this->error['purchase_comment']) { ?>
-                        <span class="error"><?= $this->error['purchase_comment'] ?></span>
+                            <span class="error"><?= $this->error['purchase_comment'] ?></span>
 <?php } ?>
-                    </div>
-                    <div class="field">
-                        <input type="submit" value="Оформить заказ" class="button" />
-                        &nbsp;&nbsp;&nbsp;
-                        <input type="button" onclick="window.location.href = '/cart'" value="Изменить заказ" class="button" />
-                    </div>
-                </form>
+                        </div>
+                        <div class="field">
+                            <input type="submit" value="Оформить заказ" class="button" />
+                            &nbsp;&nbsp;&nbsp;
+                            <input type="button" onclick="window.location.href = '/cart'" value="Изменить заказ" class="button" />
+                        </div>
+                    </form>
 <?php } else { ?>
-                <h3>Ваша корзина пуста</h3>
+                    <h3>Ваша корзина пуста</h3>
 <?php } ?>

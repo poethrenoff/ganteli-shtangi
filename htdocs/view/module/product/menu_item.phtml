@@ -1,5 +1,5 @@
 <?php foreach ($this->catalogue->getChildren() as $catalogue_item) { ?>
-                <a class="lvl<?= $this->depth + 1 ?><?php if ($catalogue_item->getSelected()) { ?> selected<?php } ?>" href="<?= $catalogue_item->getCatalogueUrl() ?>"><?= $catalogue_item->getCatalogueTitle() ?></a>
+                    <a class="lvl<?= $this->depth + 1 ?><?php if ($catalogue_item->getSelected()) { ?> selected<?php } ?>" href="<?= $catalogue_item->getCatalogueUrl() ?>"><?= $catalogue_item->getCatalogueTitle() ?></a>
 <?php   if ($catalogue_item->getSelected()) { ?>
 <?= Adminko\View::block('module/product/menu_item', array('catalogue' => $catalogue_item, 'depth' => $this->depth + 1)) ?>
 <?php   } ?>

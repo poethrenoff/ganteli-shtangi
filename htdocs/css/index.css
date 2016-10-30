@@ -48,13 +48,18 @@ div.wrapper {
     margin: auto;
 }
 
+header {
+    display: block;
+    height: 136px;
+}
 div.content {
     display: table-row;
     height: 100%;
 }
-
-header {
+footer {
     display: block;
+    height: 100px;
+    background-color: #EAEAEA;
 }
 
 header .logo, header .search, header .contact, header .info {
@@ -69,8 +74,8 @@ header .logo {
 }
 header .logo a {
     display: inline-block;
-    width: 200px;
-    height: 136px;
+    width: 80%;
+    height: 80%;
     background: url('/image/logo.png') no-repeat center;
 }
 
@@ -225,14 +230,6 @@ article {
     display: block;
     margin-left: 300px;
     margin-bottom: 20px;
-    float: none;
-}
-
-footer {
-    display: block;
-    height: 100px;
-    clear: both;
-    background-color: #EAEAEA;
 }
 
 footer .copyright, footer .address, footer .contact {
@@ -283,16 +280,20 @@ section {
 }
 
 div.product_list {
+    display: flex;
+    flex-flow: row wrap;
     margin-bottom: 20px;
 }
 
 div.product_item {
-    display: inline-block;
     width: 170px;
     height: 360px;
     padding: 15px;
-    margin: 0px 18px 18px 0px;
+    margin: 0px 30px 30px 0px;
     border: 1px solid #e4e4e4;
+}
+div.product_item:nth-child(4n) {
+    margin-right: 0px;
 }
 div.product_item:hover {
     box-shadow: 0 0 5px #d0d0d0;
@@ -430,16 +431,20 @@ div.product_item div.state.not-available, div.product div.info div.state.not-ava
 }
 
 div.catalogue_list {
+    display: flex;
+    flex-flow: row wrap;
     margin-bottom: 20px;
 }
 
 div.catalogue_item {
-    display: inline-block;
     width: 170px;
     height: 220px;
     padding: 15px;
-    margin: 0px 18px 18px 0px;
+    margin: 0px 30px 30px 0px;
     border: 1px solid #e4e4e4;
+}
+div.catalogue_item:nth-child(4n) {
+    margin-right: 0px;
 }
 div.catalogue_item:hover {
     box-shadow: 0 0 5px #d0d0d0;
@@ -706,10 +711,9 @@ input.button {
 
 div.pages {
     float: right;
-    padding-right: 10px;
 }
 div.pages ul {
-    margin: -5px 10px 0px 0px;
+    margin: -5px 2px 0px 0px;
 }
 div.pages li {
     display: inline;

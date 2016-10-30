@@ -1,63 +1,63 @@
-                <h1>Регистрация для оптовых покупателей</h1>
-                <p>Если Вы хотите работать с нашей компнией на постоянной основе, заполните анкету на данной странице. В ответ наш менеджер вышлет Вам информацию об условиях сотрудничества и актуальный прайс-лист. Рассылка прайс-листа осуществляется не чаще 1 раза в месяц.</p>                <form method="post">
-                <form method="post">
-                   <div class="field">
-                        Ваше имя: <span class="require">*</span><br />
-                        <input type="text" value="<?= $this->escape($this->fromRequest('subscribe_person')) ?>" name="subscribe_person" />
+                    <h1>Регистрация для оптовых покупателей</h1>
+                    <p>Если Вы хотите работать с нашей компнией на постоянной основе, заполните анкету на данной странице. В ответ наш менеджер вышлет Вам информацию об условиях сотрудничества и актуальный прайс-лист. Рассылка прайс-листа осуществляется не чаще 1 раза в месяц.</p>                <form method="post">
+                    <form method="post">
+                       <div class="field">
+                            Ваше имя: <span class="require">*</span><br />
+                            <input type="text" value="<?= $this->escape($this->fromRequest('subscribe_person')) ?>" name="subscribe_person" />
 <?php if ($this->error['subscribe_person']) { ?>
-                        <span class="error"><?= $this->error['subscribe_person'] ?></span>
+                            <span class="error"><?= $this->error['subscribe_person'] ?></span>
 <?php } ?>
-                    </div>
-                    <div class="field">
-                        Ваш email: <span class="require">*</span><br />
-                        <input type="text" value="<?= $this->escape($this->fromRequest('subscribe_email')) ?>" name="subscribe_email" />
+                        </div>
+                        <div class="field">
+                            Ваш email: <span class="require">*</span><br />
+                            <input type="text" value="<?= $this->escape($this->fromRequest('subscribe_email')) ?>" name="subscribe_email" />
 <?php if ($this->error['subscribe_email']) { ?>
-                        <span class="error"><?= $this->error['subscribe_email'] ?></span>
+                            <span class="error"><?= $this->error['subscribe_email'] ?></span>
 <?php } ?>
-                    </div>
-                    <div class="field">
-                        Название компании (для юрлиц):<br />
-                        <input type="text" value="<?= $this->escape($this->fromRequest('subscribe_company')) ?>" name="subscribe_company" />
+                        </div>
+                        <div class="field">
+                            Название компании (для юрлиц):<br />
+                            <input type="text" value="<?= $this->escape($this->fromRequest('subscribe_company')) ?>" name="subscribe_company" />
 <?php if ($this->error['subscribe_company']) { ?>
-                        <span class="error"><?= $this->error['subscribe_company'] ?></span>
+                            <span class="error"><?= $this->error['subscribe_company'] ?></span>
 <?php } ?>
-                    </div>
-                    <div class="field">
-                        Тип компании (для юрлиц обязательно):<br />
-                        <select name="subscribe_type">
-                            <option value=""></option>
+                        </div>
+                        <div class="field">
+                            Тип компании (для юрлиц обязательно):<br />
+                            <select name="subscribe_type">
+                                <option value=""></option>
 <?php foreach ($this->type_list as $value => $title) { ?>
-                            <option value="<?= $value ?>"<? if ($this->inRequest('subscribe_type', $value)) { ?> selected="selected"<? } ?>><?= $title ?></option>
+                                <option value="<?= $value ?>"<? if ($this->inRequest('subscribe_type', $value)) { ?> selected="selected"<? } ?>><?= $title ?></option>
 <?php } ?>
-                        </select>
+                            </select>
 <?php if ($this->error['subscribe_type']) { ?>
-                        <span class="error"><?= $this->error['subscribe_type'] ?></span>
+                            <span class="error"><?= $this->error['subscribe_type'] ?></span>
 <?php } ?>
-                    </div>
-                    <div class="field">
-                        Телефон (для юрлиц обязательно):<span class="require">*</span><br />
-                        <input type="text" value="<?= $this->escape($this->fromRequest('subscribe_phone')) ?>" name="subscribe_phone" />
+                        </div>
+                        <div class="field">
+                            Телефон (для юрлиц обязательно):<span class="require">*</span><br />
+                            <input type="text" value="<?= $this->escape($this->fromRequest('subscribe_phone')) ?>" name="subscribe_phone" />
 <?php if ($this->error['subscribe_phone']) { ?>
-                        <span class="error"><?= $this->error['subscribe_phone'] ?></span>
+                            <span class="error"><?= $this->error['subscribe_phone'] ?></span>
 <?php } ?>
-                    </div>
-                    <div class="field">
-                        Факс(для юрлиц обязательно):<span class="require">*</span><br />
-                        <input type="text" value="<?= $this->escape($this->fromRequest('subscribe_fax')) ?>" name="subscribe_fax" />
+                        </div>
+                        <div class="field">
+                            Факс(для юрлиц обязательно):<span class="require">*</span><br />
+                            <input type="text" value="<?= $this->escape($this->fromRequest('subscribe_fax')) ?>" name="subscribe_fax" />
 <?php if ($this->error['subscribe_fax']) { ?>
-                        <span class="error"><?= $this->error['subscribe_fax'] ?></span>
+                            <span class="error"><?= $this->error['subscribe_fax'] ?></span>
 <?php } ?>
-                    </div>
-                    <div class="field captcha">
-                        Введите символы с картинки: <span class="require">*</span><br />
-                        <img src="/image/captcha.php" />
-                        <input type="text" name="subscribe_captcha" value="" autocomplete="no" />
+                        </div>
+                        <div class="field captcha">
+                            Введите символы с картинки: <span class="require">*</span><br />
+                            <img src="/image/captcha.php" />
+                            <input type="text" name="subscribe_captcha" value="" autocomplete="no" />
 <?php if ($this->error['subscribe_captcha']) { ?>
-                        <span class="error"><?= $this->error['subscribe_captcha'] ?></span>
+                            <span class="error"><?= $this->error['subscribe_captcha'] ?></span>
 <?php } ?>
-                        <br/><br/>
-                    </div>
-                    <div class="field">
-                        <input type="submit" value="Зарегистрироваться" class="button" />
-                    </div>
-                </form>
+                            <br/><br/>
+                        </div>
+                        <div class="field">
+                            <input type="submit" value="Зарегистрироваться" class="button" />
+                        </div>
+                    </form>
