@@ -256,7 +256,7 @@ footer .contact .phone{
     visibility: hidden;
     position: fixed;
     display: block;
-    right: 20px;
+    left: 20px;
     bottom: 20px;
     width: 36px;
     height: 36px;
