@@ -33,7 +33,7 @@ class SubscribeModule extends Module
 
         $field_list = array(
             'subscribe_person', 'subscribe_email', 'subscribe_company',
-            'subscribe_type', 'subscribe_phone', 'subscribe_fax', 'subscribe_captcha');
+            'subscribe_type', 'subscribe_phone', 'subscribe_captcha');
         foreach ($field_list as $field_name) {
             $$field_name = trim(init_string($field_name));
         }
@@ -55,9 +55,6 @@ class SubscribeModule extends Module
             }
             if (is_empty($subscribe_phone)) {
                 $error['subscribe_phone'] = 'Не заполнено обязательное поле';
-            }
-            if (is_empty($subscribe_fax)) {
-                $error['subscribe_fax'] = 'Не заполнено обязательное поле';
             }
         }
         if (is_empty($subscribe_captcha)) {
