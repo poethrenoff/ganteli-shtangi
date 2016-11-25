@@ -39,5 +39,6 @@
 */
 .rouble {
   font-family: 'ALSRubl-Arial', Arial, sans-serif;
-  line-height: normal;
+  line-height: inherit;
+  font-size: inherit;
 }

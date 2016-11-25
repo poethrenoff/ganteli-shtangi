@@ -370,16 +370,16 @@ div.product_item div.price, div.product div.info div.price {
 div.product_item div.price span.price, div.product div.info div.price span.price {
     color: #000000;
     font-size: 18px;
-    font-weight: bold;    
+    font-weight: bold;
 }
 div.product_item div.price span.price-new, div.product div.info div.price span.price-new {
     color: #ef4814;
     font-size: 18px;
-    font-weight: bold;    
+    font-weight: bold;
 }
 div.product_item div.price span.price-old, div.product div.info div.price span.price-old {
     font-size: 14px;
-    padding-left: 20px;
+    padding-left: 10px;
     text-decoration: line-through;
 }
 
