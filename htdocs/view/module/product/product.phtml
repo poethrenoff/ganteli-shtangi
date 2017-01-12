@@ -1,6 +1,9 @@
 <?= $this->pages ?>
                     <h1><?= $this->catalogue->getCatalogueTitle() ?></h1>
 <?= Adminko\View::block('module/product/product_list', array('product_list' => $this->product_list)) ?>
+<div class="pages_bottom">
+	<?= $this->pages ?>
+</div>
 <?php if ($this->catalogue->getCatalogueDescription()) { ?>
 <?= $this->catalogue->getCatalogueDescription() ?>
 <?php } ?>

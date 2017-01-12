@@ -709,6 +709,11 @@ input.button {
     cursor: pointer;
 }
 
+div.pages_bottom {
+    margin-top: -25px;
+    margin-bottom: 60px;
+}
+
 div.pages {
     float: right;
 }
