@@ -1,4 +1,7 @@
                     <h1><?= $this->catalogue->getCatalogueTitle() ?></h1>
+<?php if ($this->catalogue->getCatalogueDescription()) { ?>
+<?= $this->catalogue->getCatalogueDescription() ?>
+<?php } ?>
                     <div class="catalogue_list">
 <?php foreach ($this->catalogue_list as $catalogue_item) { ?>
                         <div class="catalogue_item">
@@ -13,6 +16,3 @@
                         </div>
 <?php } ?>
                     </div>
-<?php if ($this->catalogue->getCatalogueDescription()) { ?>
-<?= $this->catalogue->getCatalogueDescription() ?>
-<?php } ?>
