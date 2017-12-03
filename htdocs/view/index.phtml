@@ -44,6 +44,10 @@
                 </aside>
 
                 <article>
+<?php if ($this->sale) { ?>
+    <?= $this->sale ?>
+
+<?php } ?>
 <?php if ($this->marker) { ?>
 <?= $this->marker ?>
 

@@ -98,6 +98,7 @@ class Metadata
                 'product_video' => array( 'title' => 'Видео', 'type' => 'text' ),
                 'product_instruction' => array( 'title' => 'Инструкция', 'type' => 'file', 'upload_dir' => 'instruction'),
                 'product_stock' => array( 'title' => 'Наличие', 'type' => 'boolean', 'filter' => 1),
+                'product_sale' => array( 'title' => 'Распродажа', 'type' => 'boolean', 'filter' => 1),
                 'product_rating' => array( 'title' => 'Рейтинг', 'type' => 'float', 'no_add' => true),
                 'product_voters' => array( 'title' => 'Количество голосов', 'type' => 'int', 'no_add' => true),
                 'product_order' => array( 'title' => 'Порядок', 'type' => 'order', 'group' => array( 'product_catalogue' ) ),
