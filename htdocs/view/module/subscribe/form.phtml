@@ -41,14 +41,12 @@
                             <span class="error"><?= $this->error['subscribe_phone'] ?></span>
 <?php } ?>
                         </div>
-                        <div class="field captcha">
-                            Введите символы с картинки: <span class="require">*</span><br />
-                            <img src="/image/captcha.php" />
-                            <input type="text" name="subscribe_captcha" value="" autocomplete="no" />
-<?php if ($this->error['subscribe_captcha']) { ?>
-                            <span class="error"><?= $this->error['subscribe_captcha'] ?></span>
+                        <div class="field">
+                            <script src='https://www.google.com/recaptcha/api.js'></script>
+                            <div class="g-recaptcha" data-sitekey="<?= get_preference('recaptcha_public') ?>"></div>
+<?php if ($this->error['captcha']) { ?>
+                            <span class="require"><?= $this->error['captcha'] ?></span>
 <?php } ?>
-                            <br/><br/>
                         </div>
                         <div class="field">
                             <input type="submit" value="Зарегистрироваться" class="button" />

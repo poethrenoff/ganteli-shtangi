@@ -4,7 +4,6 @@ namespace Adminko\Module;
 use Adminko\Mail;
 use Adminko\View;
 use Adminko\System;
-use Adminko\Captcha;
 use Adminko\Session;
 use Adminko\Valid\Valid;
 
@@ -33,7 +32,7 @@ class SubscribeModule extends Module
 
         $field_list = array(
             'subscribe_person', 'subscribe_email', 'subscribe_company',
-            'subscribe_type', 'subscribe_phone', 'subscribe_captcha');
+            'subscribe_type', 'subscribe_phone');
         foreach ($field_list as $field_name) {
             $$field_name = trim(init_string($field_name));
         }
@@ -57,10 +56,10 @@ class SubscribeModule extends Module
                 $error['subscribe_phone'] = 'Не заполнено обязательное поле';
             }
         }
-        if (is_empty($subscribe_captcha)) {
-            $error['subscribe_captcha'] = 'Не заполнено обязательное поле';
-        } elseif (!Captcha::check($subscribe_captcha)) {
-            $error['subscribe_captcha'] = 'Неправильно введены символы с картинки';  
+
+        $captcha = init_string('g-recaptcha-response');
+        if (!$this->check_captcha($captcha)) {
+            $error['captcha'] = 'Вы не прошли проверку';
         }
 
         if (count($error)) {

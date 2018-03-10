@@ -4,7 +4,6 @@ namespace Adminko\Module;
 use Adminko\Mail;
 use Adminko\View;
 use Adminko\System;
-use Adminko\Captcha;
 use Adminko\Session;
 
 class CallbackModule extends Module
@@ -27,19 +26,18 @@ class CallbackModule extends Module
 
         $callback_person = init_string('callback_person');
         $callback_phone = init_string('callback_phone');
-        $callback_captcha = init_string('callback_captcha');
 
         if (is_empty($callback_person)) {
             $error['callback_person'] = 'Не заполнено обязательное поле';
         }
         if (is_empty($callback_phone)) {
             $error['callback_phone'] = 'Не заполнено обязательное поле';
-        }         
-        if (is_empty($callback_captcha)) {
-            $error['callback_captcha'] = 'Не заполнено обязательное поле';
-        } elseif (!Captcha::check($callback_captcha)) {
-            $error['callback_captcha'] = 'Неправильно введены символы с картинки';  
-        }         
+        }
+
+        $captcha = init_string('g-recaptcha-response');
+        if (!$this->check_captcha($captcha)) {
+            $error['captcha'] = 'Вы не прошли проверку';
+        }
 
         if (count($error)) {
             return $error;

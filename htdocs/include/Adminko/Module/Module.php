@@ -1,6 +1,7 @@
 <?php
 namespace Adminko\Module;
 
+use Adminko\Curl;
 use Adminko\System;
 use Adminko\View;
 use Adminko\Cache\Cache;
@@ -105,6 +106,21 @@ abstract class Module extends \Adminko\Object
         $cache_key = serialize($cache_key);
 
         return md5($cache_key);
+    }
+
+    protected function check_captcha($response)
+    {
+        $url = get_preference('recaptcha_url');
+        $secret = get_preference('recaptcha_secret');
+        $remoteip = $_SERVER['REMOTE_ADDR'];
+
+        $data = compact('secret', 'response', 'remoteip');
+
+        $curl = new Curl();
+        $result = $curl->post($url, $data);
+        $result = json_decode($result, true);
+
+        return isset($result['success']) && $result['success'];
     }
 
     // Дополнительные параметры хэша модуля

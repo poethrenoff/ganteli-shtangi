@@ -6,29 +6,27 @@
 <?php if ($this->error['callback_person']) { ?>
                             <span class="error"><?= $this->error['callback_person'] ?></span>
 <?php } ?>
-                            </div>
-                            <div class="field">
-                                Ваш телефон: <span class="require">*</span><br />
-                                <input type="text" value="<?= $this->escape($this->fromRequest('callback_phone')) ?>" name="callback_phone" />
+                        </div>
+                        <div class="field">
+                            Ваш телефон: <span class="require">*</span><br />
+                            <input type="text" value="<?= $this->escape($this->fromRequest('callback_phone')) ?>" name="callback_phone" />
 <?php if ($this->error['callback_phone']) { ?>
-                            <span class="error"><?= $this->error['callback_phone'] ?></span>
+                        <span class="error"><?= $this->error['callback_phone'] ?></span>
 <?php } ?>
-                            </div>
-                            <div class="field">
-                                Комментарий:<br />
-                                <textarea name="callback_comment"><?= $this->escape($this->fromRequest('callback_comment')) ?></textarea>
+                        </div>
+                        <div class="field">
+                            Комментарий:<br />
+                            <textarea name="callback_comment"><?= $this->escape($this->fromRequest('callback_comment')) ?></textarea>
 <?php if ($this->error['callback_comment']) { ?>
-                                <span class="error"><?= $this->error['callback_comment'] ?></span>
+                            <span class="error"><?= $this->error['callback_comment'] ?></span>
 <?php } ?>
-                            </div>
-                            <div class="field captcha">
-                                Введите символы с картинки: <span class="require">*</span><br />
-                                <img src="/image/captcha.php" />
-                                <input type="text" name="callback_captcha" value="" autocomplete="no" />
-<?php if ($this->error['callback_captcha']) { ?>
-                                <span class="error"><?= $this->error['callback_captcha'] ?></span>
+                        </div>
+                        <div class="field">
+                            <script src='https://www.google.com/recaptcha/api.js'></script>
+                            <div class="g-recaptcha" data-sitekey="<?= get_preference('recaptcha_public') ?>"></div>
+<?php if ($this->error['captcha']) { ?>
+                            <span class="require"><?= $this->error['captcha'] ?></span>
 <?php } ?>
-                            <br/><br/>
                         </div>
                         <div class="field">
                             <input type="submit" value="Заказать звонок" class="button" />
