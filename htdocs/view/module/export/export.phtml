@@ -1,0 +1,40 @@
+<?php
+	print '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
+?>
+<!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<yml_catalog date="<?= date('Y-m-d H:i') ?>">
+	<shop>
+		<name>Ganteli-shtangi</name>
+		<company>ПГС-Олимп</company>
+		<url>http://ganteli-shtangi.ru/</url>
+		<currencies>
+			<currency id="RUR" rate="1"/>
+		</currencies>
+		<categories>
+<?php foreach($this->catalogue_list as $catalogue_item) { ?>
+			<category id="<?= $catalogue_item->getCatalogueId() ?>" parentId="<?= $catalogue_item->getCatalogueParent() ?>"><?= $this->escape($catalogue_item->getCatalogueTitle()) ?></category>
+<?php } ?>
+		</categories>
+		<offers>
+<?php foreach($this->product_list as $product_item) { ?>
+<?php       $catalogue = $product_item->getCatalogue() ?>
+<?php       if ($catalogue->getCatalogueActive()) { ?>
+<?php           $brand = $product_item->getBrand() ?>
+			<offer id="<?= $product_item->getProductId() ?>" type="vendor.model" available="true">
+				<url>http://ganteli-shtangi.ru<?= $product_item->getProductUrl() ?></url>
+				<price><?= $product_item->getProductPrice() ?></price>
+				<currencyId>RUR</currencyId>
+				<categoryId><?= $product_item->getProductCatalogue() ?></categoryId>
+				<picture>http://ganteli-shtangi.ru<?= $product_item->getProductImage() ?></picture>
+				<typePrefix><?= $this->escape($catalogue ? $catalogue->getCatalogueTitle() : '') ?></typePrefix>
+				<vendor><?= $this->escape($brand ? $brand->getBrandTitle() : '') ?></vendor>
+				<model><?= $this->escape($product_item->getProductTitle()) ?></model>
+				<description><![CDATA[
+                    <?= $product_item->getProductDescription() ?>
+				]]></description>
+			</offer>
+<?php       } ?>
+<?php } ?>
+		</offers>
+	</shop>
+</yml_catalog>
