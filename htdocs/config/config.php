@@ -11,7 +11,7 @@ ini_set('date.timezone', 'Europe/Moscow');
 define('SITE_TITLE', 'Гантели и штанги');
 
 define('DB_TYPE', 'mysql'); // mysql, pgsql, sqlite
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'mysql');
 define('DB_NAME', 'ganteli_shtangi');
 define('DB_USER', 'ganteli_shtangi');
 define('DB_PASSWORD', 'ganteli_shtangi');
